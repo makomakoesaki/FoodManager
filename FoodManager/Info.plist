@@ -19,13 +19,9 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.267198258625-s22013ddk627n4k4nms8m1vdcoguhejb.apps.googleusercontent.com</string>
+				<string>fb468253507839944</string>
 			</array>
 		</dict>
 		<dict>
@@ -33,12 +29,18 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb468253507839944</string>
+				<string>com.googleusercontent.apps.267198258625-s22013ddk627n4k4nms8m1vdcoguhejb</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>468253507839944</string>
+	<key>FacebookClientToken</key>
+	<string>a3c21abb5d54dffff7f8dc9af286e33f</string>
+	<key>FacebookDisplayName</key>
+	<string>FoodManager</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
@@ -81,20 +83,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb468253507839944</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>fb468253507839944</string>
-    <key>FacebookClientToken</key>
-    <string>a3c21abb5d54dffff7f8dc9af286e33f</string>
-    <key>FacebookDisplayName</key>
-    <string>FoodManager</string>
 </dict>
 </plist>

@@ -18,30 +18,24 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate,FUIAuthDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // authUIのデリゲート
         self.authUI.delegate = self
-        //認証に使用するプロバイダの選択
-        let providers: [FUIAuthProvider] = [FUIGoogleAuth(authUI: self.authUI),FUIFacebookAuth(authUI: self.authUI),FUIEmailAuth()]
+        let providers: [FUIAuthProvider] = [FUIEmailAuth(),FUIGoogleAuth(authUI: self.authUI),FUIFacebookAuth(authUI: self.authUI)]
         self.authUI.providers = providers
         // Do any additional setup after loading the view.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        // FirebaseUIのViewの取得
-        let authViewController = self.authUI.authViewController()
-        // FirebaseUIのViewの表示
-        self.present(authViewController, animated: true, completion: nil)
-        // Do any additional setup after loading the view.
+        if Auth.auth().currentUser != nil {
+            let authViewController = self.authUI.authViewController()
+            authViewController.modalPresentationStyle = .fullScreen
+            self.present(authViewController, animated: true, completion: nil)
+            // Do any additional setup after loading the view.
+        }
     }
     
-    //　認証画面から離れたときに呼ばれる（キャンセルボタン押下含む）
-    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?){
-        // 認証に成功した場合
-        if error == nil {
-            self.performSegue(withIdentifier: "Home", sender: nil)
-        } else {
-        //失敗した場合
-            print("error")
-        }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return true
     }
 
     /*

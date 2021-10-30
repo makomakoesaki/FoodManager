@@ -6,7 +6,14 @@ target 'FoodManager' do
   use_frameworks!
 
   # Pods for FoodManager
+pod 'Firebase','8.4.0'
 pod 'Firebase/Analytics'
-pod 'FirebaseUI'
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
+pod 'FirebaseUI/Auth'
+pod 'FirebaseUI/Email'
+pod 'FirebaseUI/Google'
+pod 'FirebaseUI/Facebook'
+pod 'SVProgressHUD'
 
 end

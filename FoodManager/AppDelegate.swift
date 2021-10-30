@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import FBSDKCoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,16 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 
     // facebook&Google認証時に呼ばれる関数
     func application(_ app: UIApplication, open url: URL,options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
-        // GoogleまたはFacebook認証の場合、trueを返す
-        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
-            return true
-        }
+        ApplicationDelegate.shared.application(app,open: url,sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+//        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
+//        // GoogleまたはFacebook認証の場合、trueを返す
+//        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
+//            return true
+//        }
         return false
     }
     
