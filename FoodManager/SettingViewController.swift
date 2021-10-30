@@ -31,7 +31,7 @@ class SettingViewController: UIViewController, FUIAuthDelegate {
                 changeRequest.displayName = displayName
                 changeRequest.commitChanges { error in
                     if let error = error {
-                        SVProgressHUD.showError(withStatus: "\(error)")
+                        print(error)
                         return
                     }
                     SVProgressHUD.showSuccess(withStatus: "表示名を変更しました。")
@@ -53,7 +53,6 @@ class SettingViewController: UIViewController, FUIAuthDelegate {
         self.authUI.delegate = self
         let providers: [FUIAuthProvider] = [FUIEmailAuth(),FUIGoogleAuth(authUI: self.authUI),FUIFacebookAuth(authUI: self.authUI)]
         self.authUI.providers = providers
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,15 +62,4 @@ class SettingViewController: UIViewController, FUIAuthDelegate {
             displayNameTextField.text = user.displayName
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

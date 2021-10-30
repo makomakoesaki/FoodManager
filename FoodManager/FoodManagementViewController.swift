@@ -17,26 +17,22 @@ class FoodManagementViewController: UIViewController,UITableViewDelegate,UITable
     var foodArray: [FoodData] = []
     var listener: ListenerRegistration?
     
-    @IBAction func registerButton(_ sender: Any) {
-        let foodInputScreenViewController = storyboard?.instantiateViewController(withIdentifier: "InputScreen")
-        present(foodInputScreenViewController!, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "FoodTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
         let foodRef = Firestore.firestore().collection(Const.FoodPath).order(by: "food", descending: true)
         listener = foodRef.addSnapshotListener() { (querysnapshot, error) in
             if let error = error {
-                SVProgressHUD.showError(withStatus: "\(error)")
+                print(error)
                 return
             }
             self.foodArray = querysnapshot!.documents.map { document in
@@ -61,15 +57,4 @@ class FoodManagementViewController: UIViewController,UITableViewDelegate,UITable
         cell.setFoodData(foodArray[indexPath.row])
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

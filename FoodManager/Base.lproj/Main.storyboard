@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-681" y="794"/>
         </scene>
-        <!--食品管理-->
+        <!--Food Management View Controller-->
         <scene sceneID="LcD-yl-h7j">
             <objects>
                 <viewController storyboardIdentifier="Management" id="WWz-Eg-vAo" customClass="FoodManagementViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,42 +32,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-OB-bzi">
-                                <rect key="frame" x="0.0" y="136" width="375" height="593"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-OB-bzi">
+                                <rect key="frame" x="0.0" y="143" width="375" height="586"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9L-lS-oU2">
-                                <rect key="frame" x="67" y="69" width="241" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="GMT-5Q-1Zz"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9L-lS-oU2">
+                                <rect key="frame" x="67" y="65" width="241" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="食品を登録する"/>
                                 <connections>
-                                    <segue destination="ObO-BO-qQe" kind="show" identifier="" id="9FH-OT-uy6"/>
+                                    <segue destination="ObO-BO-qQe" kind="show" id="PRj-CV-5DO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RS6-Cn-nG7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="top" secondItem="E9L-lS-oU2" secondAttribute="bottom" constant="8" symbolic="YES" id="CgG-jn-snZ"/>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="leading" secondItem="N9M-Ek-Vcq" secondAttribute="leading" id="NSV-2B-vWu"/>
-                            <constraint firstItem="E9L-lS-oU2" firstAttribute="centerX" secondItem="N9M-Ek-Vcq" secondAttribute="centerX" id="YJX-kX-eVg"/>
-                            <constraint firstItem="E9L-lS-oU2" firstAttribute="centerX" secondItem="Om2-OB-bzi" secondAttribute="centerX" id="hK9-vf-bR8"/>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="bottom" secondItem="RS6-Cn-nG7" secondAttribute="bottom" id="nJr-Us-byD"/>
-                            <constraint firstItem="E9L-lS-oU2" firstAttribute="top" secondItem="RS6-Cn-nG7" secondAttribute="top" constant="25" id="s7t-AJ-4Nv"/>
-                            <constraint firstItem="E9L-lS-oU2" firstAttribute="leading" secondItem="RS6-Cn-nG7" secondAttribute="leading" constant="67" id="w0S-lW-bH5"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="食品管理" image="apple" id="3Kq-ij-Zae"/>
+                    <navigationItem key="navigationItem" id="nti-3F-XqX"/>
                     <connections>
                         <outlet property="tableView" destination="Om2-OB-bzi" id="wSc-Em-BE4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhw-eG-dTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="793.5960591133005"/>
+            <point key="canvasLocation" x="1098.4000000000001" y="793.5960591133005"/>
         </scene>
         <!--設定-->
         <scene sceneID="Ase-Yd-3JP">
@@ -78,27 +68,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWl-Dm-G1E">
-                                <rect key="frame" x="141" y="189" width="92" height="30"/>
+                                <rect key="frame" x="134" y="157" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="表示名を変更"/>
                                 <connections>
                                     <action selector="handoleChangeButton:" destination="2sE-Vs-BOY" eventType="touchUpInside" id="lbW-cU-vja"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wC7-id-Dng">
+                                <rect key="frame" x="37" y="99" width="300" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcP-D1-dHD">
-                                <rect key="frame" x="149" y="254" width="77" height="30"/>
+                                <rect key="frame" x="142" y="195" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ログアウト"/>
                                 <connections>
                                     <action selector="handoleLogoutButton:" destination="2sE-Vs-BOY" eventType="touchUpInside" id="7mr-b6-XO0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wC7-id-Dng">
-                                <rect key="frame" x="37" y="107" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OQg-ud-IJy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlg-n4-jZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="793.5960591133005"/>
+            <point key="canvasLocation" x="1962.4000000000001" y="793.5960591133005"/>
         </scene>
         <!--Food Input Screen View Controller-->
         <scene sceneID="yeC-da-3IG">
@@ -120,71 +110,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="食品名を入力して下さい" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-qo-blK">
-                                <rect key="frame" x="16.666666666666657" y="286" width="342" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="342" id="dfZ-Ad-GFK"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="品名を入力して下さい" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-qo-blK">
+                                <rect key="frame" x="16" y="115" width="342" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="個数を入力して下さい" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74N-Io-rWz">
-                                <rect key="frame" x="16" y="330" width="343" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="QMz-dL-aMt"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="個数を入力して下さい" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74N-Io-rWz">
+                                <rect key="frame" x="15" y="175" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="値段を入力して下さい" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-if-xkM">
-                                <rect key="frame" x="16" y="374" width="343" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="eIv-ZO-162"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-d4-5RY">
-                                <rect key="frame" x="125" y="437" width="124" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="5yO-Vy-kwm"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="DfB-gb-4qC"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-d4-5RY">
+                                <rect key="frame" x="172" y="288" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登録"/>
                                 <connections>
                                     <action selector="registerButton:" destination="ObO-BO-qQe" eventType="touchUpInside" id="Bhd-b4-6mk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0n-Cy-NZg">
-                                <rect key="frame" x="125" y="524" width="124" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="LHt-ox-WE4"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="Ymg-6T-7tf"/>
-                                </constraints>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="backButton:" destination="ObO-BO-qQe" eventType="touchUpInside" id="ayb-im-WUD"/>
-                                    <action selector="registerButton:" destination="ObO-BO-qQe" eventType="touchUpInside" id="j02-AK-Hru"/>
-                                </connections>
-                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="値段を入力して下さい" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-if-xkM">
+                                <rect key="frame" x="15" y="230" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2To-T8-A2b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0Ms-qo-blK" firstAttribute="top" secondItem="2To-T8-A2b" secondAttribute="top" constant="242" id="8sT-R9-wje"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="top" secondItem="74N-Io-rWz" secondAttribute="bottom" constant="10" id="Chx-dn-xdu"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C0n-Cy-NZg" secondAttribute="trailing" symbolic="YES" id="GOw-h2-tcf"/>
-                            <constraint firstItem="0Ms-qo-blK" firstAttribute="centerX" secondItem="LZ7-bn-x9T" secondAttribute="centerX" id="Hnh-9M-CTx"/>
-                            <constraint firstItem="C0n-Cy-NZg" firstAttribute="top" secondItem="cUF-d4-5RY" secondAttribute="bottom" constant="32" id="U6n-vx-HTG"/>
-                            <constraint firstItem="C0n-Cy-NZg" firstAttribute="leading" secondItem="cUF-d4-5RY" secondAttribute="leading" id="X2e-Tg-15n"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="top" secondItem="0Ms-qo-blK" secondAttribute="bottom" constant="10" id="iXH-rW-HLt"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="centerX" secondItem="LZ7-bn-x9T" secondAttribute="centerX" id="kFF-W7-9wW"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="centerX" secondItem="LZ7-bn-x9T" secondAttribute="centerX" id="m2i-nn-CZw"/>
-                            <constraint firstItem="cUF-d4-5RY" firstAttribute="top" secondItem="7iW-if-xkM" secondAttribute="bottom" constant="29" id="wph-ch-xeM"/>
-                            <constraint firstItem="cUF-d4-5RY" firstAttribute="centerX" secondItem="LZ7-bn-x9T" secondAttribute="centerX" constant="-0.5" id="x2J-xq-E8d"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mca-ct-GoX"/>
+                    <navigationItem key="navigationItem" id="mca-ct-GoX">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="MmL-ct-yVi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="foodText" destination="0Ms-qo-blK" id="9Hx-wh-UUg"/>
                         <outlet property="numberText" destination="74N-Io-rWz" id="04L-i3-zuN"/>
@@ -193,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRL-a4-9nU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="1483.7438423645322"/>
+            <point key="canvasLocation" x="1096.8" y="1541.3793103448277"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="X3f-gR-1bC">
@@ -207,13 +165,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="UrJ-xj-yZQ" kind="relationship" relationship="viewControllers" id="H6O-dv-trH"/>
-                        <segue destination="WWz-Eg-vAo" kind="relationship" relationship="viewControllers" id="YUs-jW-NZM"/>
+                        <segue destination="jZf-sE-UA8" kind="relationship" relationship="viewControllers" id="YUs-jW-NZM"/>
                         <segue destination="2sE-Vs-BOY" kind="relationship" relationship="viewControllers" id="ECg-tC-3Wp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NV0-9a-aDf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="156" y="54"/>
+        </scene>
+        <!--食品管理-->
+        <scene sceneID="TjW-9v-XPz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jZf-sE-UA8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="食品管理" image="apple" id="3Kq-ij-Zae"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y7k-el-RSX">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WWz-Eg-vAo" kind="relationship" relationship="rootViewController" id="nOP-rW-Vxy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8n-Cn-X9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="793.5960591133005"/>
         </scene>
     </scenes>
     <resources>
