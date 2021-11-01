@@ -35,29 +35,31 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                     SVProgressHUD.dismiss(withDelay: 1)
                     return
                 }
+                let intNumber = (number as NSString).integerValue
                 if let plice = pliceText.text {
                     if plice.isEmpty {
                         SVProgressHUD.showError(withStatus: "値段を入力して下さい。")
                         SVProgressHUD.dismiss(withDelay: 1)
                         return
                     }
+                    let intPlice = (number as NSString).integerValue
                     Firestore.firestore().collection(Const.FoodPath).whereField("food", isEqualTo: food).getDocuments() { (querySnapshot, error) in
                         if let error = error {
                             print("\(error)")
                             return
                         } else {
                             for document in querySnapshot!.documents {
-                                let documentNumber = document.data()["number"] as! String
-                                let documentPlice = document.data()["plice"] as! String
-                                let totalNumber = Int(documentNumber)! + Int(number)!
-                                let totalPlice = Int(documentPlice)! + Int(plice)!
+                                let documentNumber = document.data()["number"] as! Int
+                                let documentPlice = document.data()["plice"] as! Int
+                                let totalNumber = documentNumber + intPlice
+                                let totalPlice = documentPlice + intNumber
                                 let foodDic = ["number": totalNumber, "plice": totalPlice] as [String : Any]
                                 Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
                             }
                         }
                     }
                     let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
-                    let foodsDic = ["food": food,"number": number, "plice": plice]
+                    let foodsDic = ["food": food,"number": intNumber, "plice": intPlice] as [String : Any]
                     newDocument.setData(foodsDic)
                 }
             }
