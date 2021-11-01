@@ -27,3 +27,4 @@ class FoodTableViewCell: UITableViewCell {
         self.priceLabel.text = (foodData.plice as NSNumber).stringValue
     }
 }
+

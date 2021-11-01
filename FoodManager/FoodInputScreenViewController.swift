@@ -7,13 +7,11 @@
 
 import UIKit
 import FirebaseFirestore
-import FirebaseAuth
 import SVProgressHUD
 
 class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
 
     var foodData: FoodData!
-    var userName: User = Auth.auth().currentUser!
     
     @IBOutlet weak var foodText: UITextField!
     @IBOutlet weak var numberText: UITextField!
@@ -25,7 +23,7 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                 SVProgressHUD.showError(withStatus: "品名を入力して下さい。")
                 SVProgressHUD.dismiss(withDelay: 1)
                 return
-            } else if Int(food) != nil {
+            } else if Double(food) != nil {
                 SVProgressHUD.showError(withStatus: "品名は文字を入力して下さい。")
                 SVProgressHUD.dismiss(withDelay: 1)
                 return
@@ -50,17 +48,17 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                             return
                         } else {
                             for document in querySnapshot!.documents {
-                                let documentNumber = document.data()["number"] as! Int
-                                let documentPlice = document.data()["plice"] as! Int
-                                let totalNumber = documentNumber + intNumber
-                                let totalPlice = documentPlice + intPlice
+                                let documentNumber = document.data()["number"] as! String
+                                let documentPlice = document.data()["plice"] as! String
+                                let totalNumber = Int((documentNumber as NSString).doubleValue) + Int((number as NSString).doubleValue)
+                                let totalPlice = Int((documentPlice as NSString).doubleValue) + Int((plice as NSString).doubleValue)
                                 let foodDic = ["number": totalNumber, "plice": totalPlice]
                                 Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
                             }
                         }
                     }
-                    let newDocument = Firestore.firestore().collection(Const.FoodPath).document(foodData.id)
-                    let foodsDic = ["userName": userName, "food": food, "number": intNumber, "plice": intPlice] as [String : Any]
+                    let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
+                    let foodsDic = ["food": food, "number": intNumber, "plice": intPlice] as [String : Any]
                     newDocument.setData(foodsDic)
                 }
             }
