@@ -13,6 +13,7 @@ import SVProgressHUD
 class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
 
     var foodData: FoodData!
+    var userName: User = Auth.auth().currentUser!
     
     @IBOutlet weak var foodText: UITextField!
     @IBOutlet weak var numberText: UITextField!
@@ -58,8 +59,8 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                             }
                         }
                     }
-                    let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
-                    let foodsDic = ["food": food, "number": intNumber, "plice": intPlice] as [String : Any]
+                    let newDocument = Firestore.firestore().collection(Const.FoodPath).document(foodData.id)
+                    let foodsDic = ["userName": userName, "food": food, "number": intNumber, "plice": intPlice] as [String : Any]
                     newDocument.setData(foodsDic)
                 }
             }
