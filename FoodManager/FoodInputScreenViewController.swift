@@ -29,48 +29,56 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                 SVProgressHUD.dismiss(withDelay: 1)
                 return
             }
-        }
-        if let number = numberText.text {
-            if number.isEmpty {
-                SVProgressHUD.showError(withStatus: "個数を入力して下さい。")
-                SVProgressHUD.dismiss(withDelay: 1)
-                return
+            if let number = numberText.text {
+                if number.isEmpty {
+                    SVProgressHUD.showError(withStatus: "個数を入力して下さい。")
+                    SVProgressHUD.dismiss(withDelay: 1)
+                    return
+                }
+                if let plice = pliceText.text {
+                    if plice.isEmpty {
+                        SVProgressHUD.showError(withStatus: "値段を入力して下さい。")
+                        SVProgressHUD.dismiss(withDelay: 1)
+                        return
+                    }
+                    Firestore.firestore().collection(Const.FoodPath).whereField("food", isEqualTo: food).getDocuments() { (querySnapshot, error) in
+                        if let error = error {
+                            print("ああああ\(error)ああああ")
+                            return
+                        } else {
+                            print("いいいいいいいい")
+//                            for _ in querySnapshot!.documents {
+//                                let totalNumber:Int = self.foodData.number + Int(number)!
+//                                let totalPlice:Int = self.foodData.plice + Int(plice)!
+//                                let foodDic = ["food": food, "number": totalNumber, "plice": totalPlice] as [String : Any]
+                                //let newDocument = Firestore.firestore().collection(Const.FoodPath).document
+                                //document.setData(foodDic)
+                            //}
+                        }
+                    }
+                    let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
+                    let foodsDic = ["food": food,"number": number, "plice": plice]
+                    newDocument.setData(foodsDic)
+                }
             }
         }
-        if let plice = pliceText.text {
-            if plice.isEmpty {
-                SVProgressHUD.showError(withStatus: "値段を入力して下さい。")
-                SVProgressHUD.dismiss(withDelay: 1)
-                return
-            }
-        }
-//        if foodData.food == food {
-//            let numbers = number + number
-//            let plices = plice + plice
-//            let postRef = Firestore.firestore().collection(Const.FoodPath).document(foodData.id)
-//            let updateValue1: FieldValue
-//            let updateValue2: FieldValue
-//            updateValue1 = FieldValue.arrayUnion([numbers])
-//            updateValue2 = FieldValue.arrayUnion([plices])
-//            postRef.updateData(["food": updateValue1, "plice": updateValue2])
-//            let foodRef = Firestore.firestore().collection(Const.FoodPath).document(foodData.id)
-//            let foodDic = ["food": food, "number": number, "plice": plice]
-//            foodRef.setData(foodDic)
-//        }
         SVProgressHUD.showSuccess(withStatus: "登録しました。")
         SVProgressHUD.dismiss(withDelay: 1)
-        foodText.text = ""
-        numberText.text = ""
-        pliceText.text = ""
-        pliceText.endEditing(true)
+        print(foodText.text as Any)
+        print(numberText.text as Any)
+        print(pliceText.text as Any)
+        self.foodText.text = ""
+        self.numberText.text = ""
+        self.pliceText.text = ""
+        self.pliceText.endEditing(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        numberText.keyboardType = UIKeyboardType.numberPad
-        pliceText.keyboardType = UIKeyboardType.numberPad
-        foodText.delegate = self
+        self.numberText.keyboardType = UIKeyboardType.numberPad
+        self.pliceText.keyboardType = UIKeyboardType.numberPad
+        self.foodText.delegate = self
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

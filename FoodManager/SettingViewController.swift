@@ -43,9 +43,6 @@ class SettingViewController: UIViewController, FUIAuthDelegate {
     
     @IBAction func handoleLogoutButton(_ sender: Any) {
         try! Auth.auth().signOut()
-        let authViewController = self.authUI.authViewController()
-        authViewController.modalPresentationStyle = .fullScreen
-        self.present(authViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -59,7 +56,7 @@ class SettingViewController: UIViewController, FUIAuthDelegate {
         super.viewWillAppear(animated)
         let user = Auth.auth().currentUser
         if let user = user {
-            displayNameTextField.text = user.displayName
+            self.displayNameTextField.text = user.displayName
         }
     }
 }

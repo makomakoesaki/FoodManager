@@ -22,13 +22,8 @@ class FoodTableViewCell: UITableViewCell {
     }
     
     func setFoodData(_ foodData: FoodData) {
-        if foodLabel.text == foodData.food {
-            numberlabel.text = "\(foodData.number + foodData.number)"
-            priceLabel.text = "\(foodData.plice + foodData.plice)"
-        } else {
-            foodLabel.text = foodData.food
-            numberlabel.text = "\(foodData.number)"
-            priceLabel.text = "\(foodData.plice)"
-        }
+        self.foodLabel.text = foodData.food
+        self.numberlabel.text = "\(foodData.number)"
+        self.priceLabel.text = "\(foodData.plice)"
     }
 }

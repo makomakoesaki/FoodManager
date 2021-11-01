@@ -23,6 +23,8 @@
 		0E623FF8272BF10600AD880F /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E623FF6272BF10600AD880F /* FoodTableViewCell.xib */; };
 		0E623FFA272BF37800AD880F /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FF9272BF37800AD880F /* FoodData.swift */; };
 		0E623FFC272BF90300AD880F /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FFB272BF90300AD880F /* Const.swift */; };
+		0E708015272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */; };
+		0E708018272E71B300A6BC85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E708017272E71B300A6BC85 /* LoginViewController.swift */; };
 		25E3C7EAB158C9500326E01B /* Pods_FoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620FEE3D73F5974EA02CA197 /* Pods_FoodManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		0E623FF6272BF10600AD880F /* FoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
 		0E623FF9272BF37800AD880F /* FoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
 		0E623FFB272BF90300AD880F /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FUICustomAuthPickerViewController.swift; sourceTree = "<group>"; };
+		0E708017272E71B300A6BC85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		620FEE3D73F5974EA02CA197 /* Pods_FoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06CF0B7EBFC3A7BDD4F160E /* Pods-FoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.release.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.release.xcconfig"; sourceTree = "<group>"; };
 		F1C5E25F4CE53D10C10A4FCE /* Pods-FoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.debug.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,13 +91,15 @@
 				0E30D15F272B260E00C7D262 /* SceneDelegate.swift */,
 				0E623FFB272BF90300AD880F /* Const.swift */,
 				0E623FF9272BF37800AD880F /* FoodData.swift */,
+				0E623FF1272BC17F00AD880F /* FoodInputScreenViewController.swift */,
 				0E623FF5272BF10600AD880F /* FoodTableViewCell.swift */,
 				0E623FF6272BF10600AD880F /* FoodTableViewCell.xib */,
-				0E623FF1272BC17F00AD880F /* FoodInputScreenViewController.swift */,
 				0E623FE7272B33B200AD880F /* SettingViewController.swift */,
 				0E623FE5272B33A500AD880F /* HomeViewController.swift */,
 				0E623FE9272B33CF00AD880F /* FoodManagementViewController.swift */,
 				0E623FED272B343C00AD880F /* TabBarController.swift */,
+				0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */,
+				0E708017272E71B300A6BC85 /* LoginViewController.swift */,
 				0E30D163272B260E00C7D262 /* Main.storyboard */,
 				0E30D166272B260E00C7D262 /* Assets.xcassets */,
 				0E30D168272B260E00C7D262 /* LaunchScreen.storyboard */,
@@ -256,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E708018272E71B300A6BC85 /* LoginViewController.swift in Sources */,
+				0E708015272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift in Sources */,
 				0E623FE8272B33B200AD880F /* SettingViewController.swift in Sources */,
 				0E623FEA272B33CF00AD880F /* FoodManagementViewController.swift in Sources */,
 				0E30D15E272B260E00C7D262 /* AppDelegate.swift in Sources */,
