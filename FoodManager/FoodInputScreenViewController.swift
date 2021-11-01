@@ -17,7 +17,7 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var foodText: UITextField!
     @IBOutlet weak var numberText: UITextField!
     @IBOutlet weak var pliceText: UITextField!
-
+    
     @IBAction func registerButton(_ sender: Any) {
         if let food = foodText.text {
             if food.isEmpty {
@@ -43,17 +43,17 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                     }
                     Firestore.firestore().collection(Const.FoodPath).whereField("food", isEqualTo: food).getDocuments() { (querySnapshot, error) in
                         if let error = error {
-                            print("ああああ\(error)ああああ")
+                            print("\(error)")
                             return
                         } else {
-                            print("いいいいいいいい")
-//                            for _ in querySnapshot!.documents {
-//                                let totalNumber:Int = self.foodData.number + Int(number)!
-//                                let totalPlice:Int = self.foodData.plice + Int(plice)!
-//                                let foodDic = ["food": food, "number": totalNumber, "plice": totalPlice] as [String : Any]
-                                //let newDocument = Firestore.firestore().collection(Const.FoodPath).document
-                                //document.setData(foodDic)
-                            //}
+                            for document in querySnapshot!.documents {
+                                let documentNumber = document.data()["number"] as! String
+                                let documentPlice = document.data()["plice"] as! String
+                                let totalNumber = Int(documentNumber)! + Int(number)!
+                                let totalPlice = Int(documentPlice)! + Int(plice)!
+                                let foodDic = ["number": totalNumber, "plice": totalPlice] as [String : Any]
+                                Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
+                            }
                         }
                     }
                     let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
@@ -64,9 +64,6 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
         }
         SVProgressHUD.showSuccess(withStatus: "登録しました。")
         SVProgressHUD.dismiss(withDelay: 1)
-        print(foodText.text as Any)
-        print(numberText.text as Any)
-        print(pliceText.text as Any)
         self.foodText.text = ""
         self.numberText.text = ""
         self.pliceText.text = ""

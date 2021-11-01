@@ -417,7 +417,7 @@ DEPENDENCIES:
   - FirebaseUI/Email
   - FirebaseUI/Facebook
   - FirebaseUI/Google
-  - SVProgressHUD (= 2.2.5)
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -486,6 +486,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 60ee6ffbca7cd956c9200e93eedc03ff7da7a31c
+PODFILE CHECKSUM: 7e5c09c5adf1b11f06ae83a1338483aec1750b88
 
 COCOAPODS: 1.11.2

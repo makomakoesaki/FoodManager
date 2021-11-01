@@ -11,7 +11,6 @@ import SVProgressHUD
 
 class FoodManagementViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var foodArray: [FoodData] = []

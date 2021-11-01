@@ -43,7 +43,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="食品を登録する"/>
                                 <connections>
-                                    <segue destination="ObO-BO-qQe" kind="show" id="PRj-CV-5DO"/>
+                                    <segue destination="ObO-BO-qQe" kind="show" id="SNJ-G2-bBm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -145,9 +145,9 @@
                         <barButtonItem key="backBarButtonItem" title="戻る" id="MmL-ct-yVi"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="foodText" destination="0Ms-qo-blK" id="9Hx-wh-UUg"/>
-                        <outlet property="numberText" destination="74N-Io-rWz" id="04L-i3-zuN"/>
-                        <outlet property="pliceText" destination="7iW-if-xkM" id="yhU-SX-oUy"/>
+                        <outlet property="foodText" destination="0Ms-qo-blK" id="uke-35-nmi"/>
+                        <outlet property="numberText" destination="74N-Io-rWz" id="Jtv-nh-NOj"/>
+                        <outlet property="pliceText" destination="7iW-if-xkM" id="nzz-OU-KbB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRL-a4-9nU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

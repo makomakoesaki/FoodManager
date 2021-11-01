@@ -8,5 +8,5 @@
 import Foundation
 
 struct Const {
-    static let FoodPath = "foods"
+    static let FoodPath = "FoodData"
 }

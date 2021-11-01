@@ -23,7 +23,7 @@ class FoodTableViewCell: UITableViewCell {
     
     func setFoodData(_ foodData: FoodData) {
         self.foodLabel.text = foodData.food
-        self.numberlabel.text = "\(foodData.number)"
-        self.priceLabel.text = "\(foodData.plice)"
+        self.numberlabel.text = foodData.number
+        self.priceLabel.text = foodData.plice
     }
 }
