@@ -12,6 +12,8 @@ import SVProgressHUD
 class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
 
     var foodData: FoodData!
+    var foodLength: Int = 10
+    var numLength: Int = 6
     
     @IBOutlet weak var foodText: UITextField!
     @IBOutlet weak var numberText: UITextField!
@@ -19,8 +21,13 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func registerButton(_ sender: Any) {
         if let food = foodText.text {
+            
             if food.isEmpty {
                 SVProgressHUD.showError(withStatus: "品名を入力して下さい。")
+                SVProgressHUD.dismiss(withDelay: 1)
+                return
+            } else if food.count > foodLength {
+                SVProgressHUD.showError(withStatus: "品名は10文字以内で入力して下さい。")
                 SVProgressHUD.dismiss(withDelay: 1)
                 return
             } else if Double(food) != nil {
@@ -33,6 +40,10 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                     SVProgressHUD.showError(withStatus: "個数を入力して下さい。")
                     SVProgressHUD.dismiss(withDelay: 1)
                     return
+                } else if number.count > numLength {
+                    SVProgressHUD.showError(withStatus: "個数は6桁以内で入力して下さい。")
+                    SVProgressHUD.dismiss(withDelay: 1)
+                    return
                 }
                 let intNumber = Int((number as NSString).doubleValue)
                 if let plice = pliceText.text {
@@ -41,24 +52,39 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                         SVProgressHUD.dismiss(withDelay: 1)
                         return
                     }
+                    else if plice.count > numLength {
+                        SVProgressHUD.showError(withStatus: "値段は6桁以内で入力して下さい。")
+                        SVProgressHUD.dismiss(withDelay: 1)
+                        return
+                    }
                     let intPlice = Int((plice as NSString).doubleValue)
-                    Firestore.firestore().collection(Const.FoodPath).whereField("food", isEqualTo: food).getDocuments() { (querySnapshot, error) in
+                    Firestore.firestore().collection(Const.FoodPath).whereField("food", in: [food]).getDocuments() { (querySnapshot, error) in
                         if let error = error {
                             print("\(error)")
                             return
                         } else {
                             for document in querySnapshot!.documents {
-                                let documentNumber = document.data()["number"] as! String
-                                let documentPlice = document.data()["plice"] as! String
-                                let totalNumber = Int((documentNumber as NSString).doubleValue) + Int((number as NSString).doubleValue)
-                                let totalPlice = Int((documentPlice as NSString).doubleValue) + Int((plice as NSString).doubleValue)
-                                let foodDic = ["number": totalNumber, "plice": totalPlice]
+                                let documentNumber = document.data()["number"] as! Int
+                                let documentPlice = document.data()["plice"] as! Int
+                                let totalNumber = documentNumber + Int((number as NSString).doubleValue)
+                                if totalNumber > 999999 {
+                                    SVProgressHUD.showError(withStatus: "個数の合計値が7桁を超えています。")
+                                    SVProgressHUD.dismiss(withDelay: 2)
+                                    return
+                                }
+                                let totalPlice = documentPlice + Int((plice as NSString).doubleValue)
+                                if totalPlice > 999999 {
+                                    SVProgressHUD.showError(withStatus: "値段の合計値が7桁を超えています。")
+                                    SVProgressHUD.dismiss(withDelay: 2)
+                                    return
+                                }
+                                let foodDic = ["date": FieldValue.serverTimestamp(), "number": totalNumber, "plice": totalPlice] as [String : Any]
                                 Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
                             }
                         }
                     }
                     let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
-                    let foodsDic = ["food": food, "number": intNumber, "plice": intPlice] as [String : Any]
+                    let foodsDic = ["date": FieldValue.serverTimestamp(), "food": food, "number": intNumber, "plice": intPlice] as [String : Any]
                     newDocument.setData(foodsDic)
                 }
             }
@@ -77,6 +103,7 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
         self.numberText.keyboardType = UIKeyboardType.numberPad
         self.pliceText.keyboardType = UIKeyboardType.numberPad
         self.foodText.delegate = self
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

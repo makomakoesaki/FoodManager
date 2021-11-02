@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 import SVProgressHUD
 
-class FoodManagementViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class FoodManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,7 +28,7 @@ class FoodManagementViewController: UIViewController,UITableViewDelegate,UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        let foodRef = Firestore.firestore().collection(Const.FoodPath).order(by: "food", descending: true)
+        let foodRef = Firestore.firestore().collection(Const.FoodPath).order(by: "date", descending: true)
         listener = foodRef.addSnapshotListener() { (querysnapshot, error) in
             if let error = error {
                 print(error)
