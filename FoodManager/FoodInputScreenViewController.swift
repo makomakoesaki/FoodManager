@@ -14,6 +14,7 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
     var foodData: FoodData!
     var foodLength: Int = 10
     var numLength: Int = 6
+    var pliceLength: Int = 6
     
     @IBOutlet weak var foodText: UITextField!
     @IBOutlet weak var numberText: UITextField!
@@ -52,7 +53,7 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                         SVProgressHUD.dismiss(withDelay: 1)
                         return
                     }
-                    else if plice.count > numLength {
+                    else if plice.count > pliceLength {
                         SVProgressHUD.showError(withStatus: "値段は6桁以内で入力して下さい。")
                         SVProgressHUD.dismiss(withDelay: 1)
                         return
