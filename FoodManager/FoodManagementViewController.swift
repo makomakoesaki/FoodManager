@@ -56,4 +56,17 @@ class FoodManagementViewController: UIViewController, UITableViewDelegate, UITab
         cell.setFoodData(foodArray[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "編集") { (action, view, completionHandler) in
+            completionHandler(true)
+        }
+        let deleteAction = UIContextualAction(style: .destructive, title: "削除") { (action, view, completionHandler) in
+            self.foodArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
+            Firestore.firestore().collection(Const.FoodPath).document().delete()
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+    }
 }
