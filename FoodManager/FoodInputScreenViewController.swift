@@ -12,11 +12,11 @@ import SVProgressHUD
 
 class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
 
+    var listener: ListenerRegistration?
     var foodData: FoodData!
     var foodLength: Int = 10
     var numLength: Int = 6
     var pliceLength: Int = 6
-    var listener: ListenerRegistration?
     
     @IBOutlet weak var foodText: UITextField!
     @IBOutlet weak var numberText: UITextField!
@@ -44,7 +44,7 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                     SVProgressHUD.dismiss(withDelay: 1)
                     return
                 } else if number.count > numLength {
-                    SVProgressHUD.showError(withStatus: "個数は6桁以内で入力して下さい。")
+                    SVProgressHUD.showError(withStatus: "個数は2桁に収めて下さい。")
                     SVProgressHUD.dismiss(withDelay: 1)
                     return
                 }
@@ -56,85 +56,38 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                         return
                     }
                     else if plice.count > pliceLength {
-                        SVProgressHUD.showError(withStatus: "値段は6桁以内で入力して下さい。")
+                        SVProgressHUD.showError(withStatus: "値段は20000円に収めて下さい。")
                         SVProgressHUD.dismiss(withDelay: 1)
                         return
                     }
                     let intPlice = Int((plice as NSString).doubleValue)
-//                    Firestore.firestore().collection(Const.FoodPath).whereField("food", in: [food]).getDocuments() { (querySnapshot, error) in
-//                        if let error = error {
-//                            print("\(error)")
-//                            return
-//                        } else {
-//                            for document in querySnapshot!.documents {
-//                                let documentNumber = document.data()["number"] as! Int
-//                                let documentPlice = document.data()["plice"] as! Int
-//                                let totalNumber = documentNumber + Int((number as NSString).doubleValue)
-//                                if totalNumber > 999999 {
-                    //                                    SVProgressHUD.showError(withStatus: "個数の合計値が7桁を超えています。")
-                    //                                    SVProgressHUD.dismiss(withDelay: 2)
-                    //                                    return
-                    //                                }
-                    //                                let totalPlice = documentPlice + Int((plice as NSString).doubleValue)
-                    //                                if totalPlice > 999999 {
-                    //                                    SVProgressHUD.showError(withStatus: "値段の合計値が7桁を超えています。")
-                    //                                    SVProgressHUD.dismiss(withDelay: 2)
-                    //                                    return
-                    //                                }
-                    //                                let foodDic = ["date": FieldValue.serverTimestamp(), "number": totalNumber, "plice": totalPlice] as [String : Any]
-                    //                                Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
-                    //                            }
-                    //                        }
-                    //                    }
-                    Firestore.firestore().collection(Const.FoodPath).whereField("food", in: [food]).addSnapshotListener{ (querySnapshot, error) in
+                    Firestore.firestore().collection(Const.FoodPath).whereField("food", in: [food]).getDocuments() { (querySnapshot, error) in
                         if let error = error {
                             print("\(error)")
                             return
                         } else {
-                            querySnapshot?.documentChanges.forEach{ diff in
-                                if (diff.type == .modified) {
-                                    let documentNumber = diff.document.data()["number"] as! Int
-                                    let documentPlice = diff.document.data()["plice"] as! Int
-                                    let totalNumber = documentNumber + Int((number as NSString).doubleValue)
-                                    if totalNumber > 999999 {
-                                        SVProgressHUD.showError(withStatus: "個数の合計値が7桁を超えています。")
-                                        SVProgressHUD.dismiss(withDelay: 2)
-                                        return
-                                    }
-                                    let totalPlice = documentPlice + Int((plice as NSString).doubleValue)
-                                    if totalPlice > 999999 {
-                                        SVProgressHUD.showError(withStatus: "値段の合計値が7桁を超えています。")
-                                        SVProgressHUD.dismiss(withDelay: 2)
-                                        return
-                                    }
-                                    let myTimestamp = Firebase.Firestore.Timestamp.
-                                    let myToDated = myTimestamp.dateValue()
-                                    let foodDic = ["date": myToDated, "number": totalNumber, "plice": totalPlice] as [String : Any]
-                                    Firestore.firestore().collection(Const.FoodPath).document(diff.document.documentID).updateData(foodDic)
-//                                } else if (diff.type == .added) {
-//                                    let documentNumber = diff.document.data()["number"] as! Int
-//                                    let documentPlice = diff.document.data()["plice"] as! Int
-//                                    let totalNumber = documentNumber + Int((number as NSString).doubleValue)
-//                                    if totalNumber > 999999 {
-//                                        SVProgressHUD.showError(withStatus: "個数の合計値が7桁を超えています。")
-//                                        SVProgressHUD.dismiss(withDelay: 2)
-//                                        return
-//                                    }
-//                                    let totalPlice = documentPlice + Int((plice as NSString).doubleValue)
-//                                    if totalPlice > 999999 {
-//                                        SVProgressHUD.showError(withStatus: "値段の合計値が7桁を超えています。")
-//                                        SVProgressHUD.dismiss(withDelay: 2)
-//                                        return
-//                                    }
-//                                    let foodDic = ["date": FieldValue.serverTimestamp(), "number": totalNumber, "plice": totalPlice] as [String : Any]
-//                                    Firestore.firestore().collection(Const.FoodPath).document(diff.document.documentID).updateData(foodDic)
+                            for document in querySnapshot!.documents {
+                                let documentNumber = document.data()["number"] as! Int
+                                let documentPlice = document.data()["plice"] as! Int
+                                let totalNumber = documentNumber + Int((number as NSString).doubleValue)
+                                if totalNumber > 100 {
+                                    SVProgressHUD.showError(withStatus: "個数の合計値が100を超えています。")
+                                    SVProgressHUD.dismiss(withDelay: 2)
+                                    return
                                 }
+                                let totalPlice = documentPlice + Int((plice as NSString).doubleValue)
+                                if totalPlice > 99999 {
+                                    SVProgressHUD.showError(withStatus: "値段の合計値が50000円を超えています。")
+                                    SVProgressHUD.dismiss(withDelay: 2)
+                                    return
+                                }
+                                let foodDic = ["date": Firebase.Timestamp(), "number": totalNumber, "plice": totalPlice] as [String : Any]
+                                Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
                             }
                         }
-                        self.listener?.remove()
                     }
                     let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
-                    let foodsDic = ["date": FieldValue.serverTimestamp(), "food": food, "number": intNumber, "plice": intPlice] as [String : Any]
+                    let foodsDic = ["date": Firebase.Timestamp(), "food": food, "number": intNumber, "plice": intPlice] as [String : Any]
                     newDocument.setData(foodsDic)
                 }
             }

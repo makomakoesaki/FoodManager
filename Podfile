@@ -15,5 +15,8 @@ pod 'FirebaseUI/Email'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
 pod 'SVProgressHUD'
+pod 'Charts'
+pod 'TinyConstraints'
+pod 'LTMorphingLabel'
 
 end
