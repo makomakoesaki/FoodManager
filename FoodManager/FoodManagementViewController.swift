@@ -12,6 +12,7 @@ import SVProgressHUD
 class FoodManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var serchBar: UISearchBar!
     
     var foodArray: [FoodData] = []
     var listener: ListenerRegistration?
