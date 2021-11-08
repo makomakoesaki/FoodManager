@@ -281,18 +281,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-OB-bzi">
-                                <rect key="frame" x="0.0" y="143" width="375" height="586"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="603"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="検索したいキーワード" translatesAutoresizingMaskIntoConstraints="NO" id="14V-Rn-hTf">
-                                <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="27"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="E9L-lS-oU2">
-                                <rect key="frame" x="62" y="42" width="251" height="49"/>
+                                <rect key="frame" x="67" y="44" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="データを登録する"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="出費情報を登録する"/>
                                 <connections>
                                     <segue destination="ObO-BO-qQe" kind="show" id="SNJ-G2-bBm"/>
                                 </connections>
@@ -315,7 +315,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="serchBar" destination="14V-Rn-hTf" id="99z-hI-pWr"/>
+                        <outlet property="serchBar" destination="14V-Rn-hTf" id="VvW-1m-tIV"/>
                         <outlet property="tableView" destination="Om2-OB-bzi" id="wSc-Em-BE4"/>
                     </connections>
                 </viewController>
@@ -358,51 +358,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="品名を入力して下さい（10文字以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-qo-blK">
-                                <rect key="frame" x="51.666666666666657" y="117" width="271.66666666666674" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="個数を入力して下さい（5桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74N-Io-rWz">
-                                <rect key="frame" x="62" y="175" width="251" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="値段を入力して下さい（5桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-if-xkM">
-                                <rect key="frame" x="52.666666666666657" y="229" width="270" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="2RJ-pc-li8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-d4-5RY">
-                                <rect key="frame" x="166" y="288" width="42" height="30"/>
+                                <rect key="frame" x="152" y="374" width="71" height="64"/>
                                 <state key="normal" title="登録"/>
                                 <connections>
                                     <action selector="registerButton:" destination="ObO-BO-qQe" eventType="touchUpInside" id="Bhd-b4-6mk"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="品名を入力して下さい（10文字以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-qo-blK">
+                                <rect key="frame" x="50" y="203" width="275" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="chL-8c-o9g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="個数を入力して下さい（5桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74N-Io-rWz">
+                                <rect key="frame" x="50" y="257" width="275" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="H9k-cj-HZC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="値段を入力して下さい（5桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-if-xkM">
+                                <rect key="frame" x="50" y="312" width="275" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="fKp-s9-bk9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2To-T8-A2b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cUF-d4-5RY" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="166" id="5P0-tY-1m6"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="bottom" secondItem="cUF-d4-5RY" secondAttribute="bottom" constant="411" id="6xz-1Z-kLa"/>
-                            <constraint firstItem="cUF-d4-5RY" firstAttribute="top" secondItem="7iW-if-xkM" secondAttribute="bottom" constant="25" id="GmN-sn-7XQ"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="centerX" secondItem="LZ7-bn-x9T" secondAttribute="centerX" id="KwW-Qm-4gy"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="top" secondItem="74N-Io-rWz" secondAttribute="bottom" constant="20" id="QVP-dt-t0k"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7iW-if-xkM" secondAttribute="trailing" id="VeP-Yv-Ruu"/>
-                            <constraint firstItem="0Ms-qo-blK" firstAttribute="centerX" secondItem="LZ7-bn-x9T" secondAttribute="centerX" id="XSh-wF-fBc"/>
-                            <constraint firstItem="0Ms-qo-blK" firstAttribute="top" secondItem="2To-T8-A2b" secondAttribute="top" constant="73" id="aKH-wO-taF"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="centerX" secondItem="0Ms-qo-blK" secondAttribute="centerX" id="eAs-1r-YwL"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2To-T8-A2b" secondAttribute="leading" id="eIO-4k-VFP"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="cUF-d4-5RY" secondAttribute="trailing" constant="167" id="nVe-U0-iSN"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="top" secondItem="0Ms-qo-blK" secondAttribute="bottom" constant="24" id="pqM-yH-UcJ"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="74N-Io-rWz" secondAttribute="trailing" id="tXr-5i-9fH"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="centerX" secondItem="LZ7-bn-x9T" secondAttribute="centerX" id="vG9-NZ-f6J"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2To-T8-A2b" secondAttribute="leading" id="zBZ-o2-kMM"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="centerX" secondItem="0Ms-qo-blK" secondAttribute="centerX" id="zYV-pg-d1l"/>
+                            <constraint firstItem="0Ms-qo-blK" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="50" id="180-7N-C3h"/>
+                            <constraint firstItem="74N-Io-rWz" firstAttribute="top" secondItem="0Ms-qo-blK" secondAttribute="bottom" constant="20" id="B0w-kZ-9wV"/>
+                            <constraint firstItem="0Ms-qo-blK" firstAttribute="top" secondItem="2To-T8-A2b" secondAttribute="top" constant="159" id="Cs1-TY-O8n"/>
+                            <constraint firstItem="7iW-if-xkM" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="50" id="HL8-FC-pzl"/>
+                            <constraint firstItem="cUF-d4-5RY" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="152" id="M69-Qn-pcT"/>
+                            <constraint firstItem="7iW-if-xkM" firstAttribute="top" secondItem="74N-Io-rWz" secondAttribute="bottom" constant="20" id="RU0-Kc-tfu"/>
+                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="0Ms-qo-blK" secondAttribute="trailing" constant="50" id="Uau-cQ-nDb"/>
+                            <constraint firstItem="74N-Io-rWz" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="50" id="X8v-fp-OLD"/>
+                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="7iW-if-xkM" secondAttribute="trailing" constant="50" id="Yfy-Sw-kx0"/>
+                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="74N-Io-rWz" secondAttribute="trailing" constant="50" id="fP1-d5-ysZ"/>
+                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="cUF-d4-5RY" secondAttribute="trailing" constant="152" id="fW9-aT-WaZ"/>
+                            <constraint firstItem="2To-T8-A2b" firstAttribute="bottom" secondItem="cUF-d4-5RY" secondAttribute="bottom" constant="291" id="ijX-Qj-M9L"/>
+                            <constraint firstItem="cUF-d4-5RY" firstAttribute="top" secondItem="7iW-if-xkM" secondAttribute="bottom" constant="28" id="ywc-NU-eJX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mca-ct-GoX">
@@ -494,11 +497,11 @@
             </objects>
             <point key="canvasLocation" x="-530.39999999999998" y="793.5960591133005"/>
         </scene>
-        <!--食品管理-->
+        <!--出費管理-->
         <scene sceneID="TjW-9v-XPz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jZf-sE-UA8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="食品管理" image="apple" id="3Kq-ij-Zae"/>
+                    <tabBarItem key="tabBarItem" title="出費管理" image="apple" id="3Kq-ij-Zae"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y7k-el-RSX">

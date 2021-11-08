@@ -67,28 +67,37 @@ class FoodInputScreenViewController: UIViewController, UITextFieldDelegate {
                             return
                         } else {
                             for document in querySnapshot!.documents {
-                                let documentNumber = document.data()["number"] as! Int
-                                let documentPlice = document.data()["plice"] as! Int
-                                let totalNumber = documentNumber + Int((number as NSString).doubleValue)
-                                if totalNumber > 100 {
-                                    SVProgressHUD.showError(withStatus: "個数の合計値が100を超えています。")
-                                    SVProgressHUD.dismiss(withDelay: 2)
+                                let calendar = Calendar(identifier: .gregorian)
+                                let timestamp = Timestamp()
+                                let date: Date = timestamp.dateValue()
+                                let day = calendar.component(.day, from: date)
+                                let documentDate = document.data()["date"] as! Timestamp
+                                let documentDay: Date = documentDate.dateValue()
+                                let dcumentDay = calendar.component(.day, from: documentDay)
+                                if day == dcumentDay {
+                                    let documentNumber = document.data()["number"] as! Int
+                                    let documentPlice = document.data()["plice"] as! Int
+                                    let totalNumber = documentNumber + Int((number as NSString).doubleValue)
+                                    if totalNumber > 100 {
+                                        SVProgressHUD.showError(withStatus: "個数の合計値が100を超えています。")
+                                        SVProgressHUD.dismiss(withDelay: 2)
+                                        return
+                                    }
+                                    let totalPlice = documentPlice + Int((plice as NSString).doubleValue)
+                                    if totalPlice > 99999 {
+                                        SVProgressHUD.showError(withStatus: "値段の合計値が50000円を超えています。")
+                                        SVProgressHUD.dismiss(withDelay: 2)
+                                        return
+                                    }
+                                    let foodDic = ["date": Firebase.Timestamp(), "number": totalNumber, "plice": totalPlice] as [String : Any]
+                                    Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
+                                } else {
                                     return
                                 }
-                                let totalPlice = documentPlice + Int((plice as NSString).doubleValue)
-                                if totalPlice > 99999 {
-                                    SVProgressHUD.showError(withStatus: "値段の合計値が50000円を超えています。")
-                                    SVProgressHUD.dismiss(withDelay: 2)
-                                    return
-                                }
-                                let foodDic = ["date": Firebase.Timestamp(), "number": totalNumber, "plice": totalPlice] as [String : Any]
-                                Firestore.firestore().collection(Const.FoodPath).document(document.documentID).updateData(foodDic)
                             }
                         }
                     }
-                    let newDocument = Firestore.firestore().collection(Const.FoodPath).document()
-                    let foodsDic = ["date": Firebase.Timestamp(), "food": food, "number": intNumber, "plice": intPlice] as [String : Any]
-                    newDocument.setData(foodsDic)
+                    Firestore.firestore().collection(Const.FoodPath).addDocument(data:["date": Firebase.Timestamp(), "food": food, "number": intNumber, "plice": intPlice])
                 }
             }
         }

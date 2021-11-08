@@ -9,13 +9,13 @@ import UIKit
 import FirebaseFirestore
 import SVProgressHUD
 
-class FoodManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var serchBar: UISearchBar!
+class FoodManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     var foodArray: [FoodData] = []
     var listener: ListenerRegistration?
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var serchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class FoodManagementViewController: UIViewController, UITableViewDelegate, UITab
         tableView.dataSource = self
         let nib = UINib(nibName: "FoodTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
+        serchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,5 +67,17 @@ class FoodManagementViewController: UIViewController, UITableViewDelegate, UITab
             Firestore.firestore().collection(Const.FoodPath).document(removed.id).delete()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        let result = serchBar.text
+        if result!.isEmpty == true {
+            foodArray = result
+            tableView.reloadData()
+        } else if result?.isEmpty == false {
+            foodArray = result
+            tableView.reloadData()
+        }
     }
 }
