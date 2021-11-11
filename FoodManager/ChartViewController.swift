@@ -15,17 +15,17 @@
 //}
 //
 //class ChartViewController: UIViewController {
-//    
+//
 //    @IBOutlet weak var scrollView: UIScrollView!
-//    
+//
 //    lazy var maxVal: Int = barItems.map({ $0.0 }).max()!
 //    var barItems: [(plice: Int, date: Date)] = []
 //    var foodData: FoodData!
-//    
+//
 //    func setData(_ foodData: FoodData) {
 //        barItems.append(contentsOf: [(foodData.plice, foodData.date)])
 //    }
-//    
+//
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //        scrollView.frame = CGRect(x: 0,y: 0,width: scrollView.superview!.frame.width,height: scrollView.superview!.frame.height)
@@ -35,7 +35,7 @@
 //        scrollView.isPagingEnabled = true
 //        setData(foodData)
 //    }
-//    
+//
 //    func createBarChartView(of items: [BarChartModel]) -> BarChartView {
 //        let barChartView = BarChartView()
 //        barChartView.delegate = self
@@ -53,7 +53,7 @@
 //        barChartView.leftAxis.axisMaximum = Double(maxVal) + 1
 //        return barChartView
 //    }
-//    
+//
 //    private func createBarChartData(of items: [BarChartModel]) -> BarChartData {
 //        let entries: [BarChartDataEntry] = items.enumerated().map {
 //            let (i, item) = $0
@@ -66,7 +66,7 @@
 //        let barChartData = BarChartData(dataSet: barChartDataSet)
 //        return barChartData
 //    }
-//    
+//
 //    private func createContentsView(of items: [BarChartModel], barsCountPerPage: Int) -> UIView {
 //        let itemsPerPage = stride(from: 0, to: items.count, by: barsCountPerPage).map { Array(items[$0 ..< min($0 + barsCountPerPage, items.count)]) }
 //        let contentsView = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.frame.width * CGFloat(itemsPerPage.count), height: scrollView.frame.height))
@@ -99,7 +99,7 @@
 //}
 //
 //class XAxisFormatter: IAxisValueFormatter {
-//    
+//
 //    let items: [BarChartModel]
 //    init(of items: [BarChartModel]) {
 //        self.items = items

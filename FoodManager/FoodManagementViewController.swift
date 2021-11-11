@@ -15,7 +15,7 @@ class FoodManagementViewController: UIViewController, UITableViewDelegate, UITab
     var listener: ListenerRegistration?
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var serchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,9 @@ class FoodManagementViewController: UIViewController, UITableViewDelegate, UITab
         tableView.dataSource = self
         let nib = UINib(nibName: "FoodTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
-        serchBar.delegate = self
+        searchBar.delegate = self
+        searchBar.enablesReturnKeyAutomatically = false
+        searchBar.resignFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,19 +67,47 @@ class FoodManagementViewController: UIViewController, UITableViewDelegate, UITab
             tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
             Firestore.firestore().collection(Const.FoodPath).document(removed.id).delete()
+            
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
-        let result = serchBar.text
-        if result!.isEmpty == true {
-            foodArray = result
-            tableView.reloadData()
-        } else if result?.isEmpty == false {
-            foodArray = result
-            tableView.reloadData()
+        Firestore.firestore().collection(Const.FoodPath).getDocuments { (snap, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                for i in snap!.documents {
+                    let food = i.get("food") as! String
+                    if food == self.searchBar.text {
+                        self.foodArray = self.foodArray.filter({ $0.food.lowercased().contains((self.searchBar.text?.lowercased())!) })
+                    }
+                }
+                if self.foodArray.filter({ $0.food == searchBar.text }).isEmpty {
+                    SVProgressHUD.showError(withStatus: "データは見つかりませんでした。")
+                    SVProgressHUD.dismiss(withDelay: 1)
+                } else {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        let foodRef = Firestore.firestore().collection(Const.FoodPath).order(by: "date", descending: true)
+        listener = foodRef.addSnapshotListener() { (querysnapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            self.foodArray = querysnapshot!.documents.map { document in
+                let foodData = FoodData(document: document)
+                return foodData
+            }
+            self.tableView.reloadData()
         }
     }
 }

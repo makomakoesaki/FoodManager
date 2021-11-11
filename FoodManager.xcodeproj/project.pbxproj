@@ -13,7 +13,6 @@
 		0E30D167272B260E00C7D262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E30D166272B260E00C7D262 /* Assets.xcassets */; };
 		0E30D16A272B260E00C7D262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E30D168272B260E00C7D262 /* LaunchScreen.storyboard */; };
 		0E30D172272B28E200C7D262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E30D171272B28E200C7D262 /* GoogleService-Info.plist */; };
-		0E623FE6272B33A500AD880F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FE5272B33A500AD880F /* HomeViewController.swift */; };
 		0E623FE8272B33B200AD880F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FE7272B33B200AD880F /* SettingViewController.swift */; };
 		0E623FEA272B33CF00AD880F /* FoodManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FE9272B33CF00AD880F /* FoodManagementViewController.swift */; };
 		0E623FEE272B343C00AD880F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FED272B343C00AD880F /* TabBarController.swift */; };
@@ -26,6 +25,9 @@
 		0E708015272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */; };
 		0E708018272E71B300A6BC85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E708017272E71B300A6BC85 /* LoginViewController.swift */; };
 		0E7CD0032733EF2D0090673B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CD0022733EF2D0090673B /* ChartViewController.swift */; };
+		0EB58762273B8864007B1B8E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB58760273B8864007B1B8E /* HomeViewController.swift */; };
+		0EB58766273B88DB007B1B8E /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB58764273B88DB007B1B8E /* MonthTableViewCell.swift */; };
+		0EB58767273B88DB007B1B8E /* MonthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB58765273B88DB007B1B8E /* MonthTableViewCell.xib */; };
 		143AD15334385D9A02495AFA /* Pods_FoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E15F6979AE88275FB1A4935 /* Pods_FoodManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +40,6 @@
 		0E30D169272B260E00C7D262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E30D16B272B260E00C7D262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E30D171272B28E200C7D262 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0E623FE5272B33A500AD880F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0E623FE7272B33B200AD880F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0E623FE9272B33CF00AD880F /* FoodManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodManagementViewController.swift; sourceTree = "<group>"; };
 		0E623FED272B343C00AD880F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FUICustomAuthPickerViewController.swift; sourceTree = "<group>"; };
 		0E708017272E71B300A6BC85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0E7CD0022733EF2D0090673B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		0EB58760273B8864007B1B8E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0EB58764273B88DB007B1B8E /* MonthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
+		0EB58765273B88DB007B1B8E /* MonthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthTableViewCell.xib; sourceTree = "<group>"; };
 		2E15F6979AE88275FB1A4935 /* Pods_FoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAFEB922C45BA1CD2DFBBA4 /* Pods-FoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.debug.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.debug.xcconfig"; sourceTree = "<group>"; };
 		7DF3546C463564BF7950905B /* Pods-FoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.release.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +111,9 @@
 				0E623FF5272BF10600AD880F /* FoodTableViewCell.swift */,
 				0E623FF6272BF10600AD880F /* FoodTableViewCell.xib */,
 				0E623FE9272B33CF00AD880F /* FoodManagementViewController.swift */,
-				0E623FE5272B33A500AD880F /* HomeViewController.swift */,
+				0EB58764273B88DB007B1B8E /* MonthTableViewCell.swift */,
+				0EB58765273B88DB007B1B8E /* MonthTableViewCell.xib */,
+				0EB58760273B8864007B1B8E /* HomeViewController.swift */,
 				0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */,
 				0E708017272E71B300A6BC85 /* LoginViewController.swift */,
 				0E623FED272B343C00AD880F /* TabBarController.swift */,
@@ -191,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E30D16A272B260E00C7D262 /* LaunchScreen.storyboard in Resources */,
+				0EB58767273B88DB007B1B8E /* MonthTableViewCell.xib in Resources */,
 				0E30D172272B28E200C7D262 /* GoogleService-Info.plist in Resources */,
 				0E623FF4272BDC6200AD880F /* credentials.plist in Resources */,
 				0E30D167272B260E00C7D262 /* Assets.xcassets in Resources */,
@@ -267,16 +274,17 @@
 			files = (
 				0E708018272E71B300A6BC85 /* LoginViewController.swift in Sources */,
 				0E708015272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift in Sources */,
+				0EB58766273B88DB007B1B8E /* MonthTableViewCell.swift in Sources */,
 				0E623FE8272B33B200AD880F /* SettingViewController.swift in Sources */,
 				0E623FEA272B33CF00AD880F /* FoodManagementViewController.swift in Sources */,
 				0E7CD0032733EF2D0090673B /* ChartViewController.swift in Sources */,
+				0EB58762273B8864007B1B8E /* HomeViewController.swift in Sources */,
 				0E30D15E272B260E00C7D262 /* AppDelegate.swift in Sources */,
 				0E623FFA272BF37800AD880F /* FoodData.swift in Sources */,
 				0E623FEE272B343C00AD880F /* TabBarController.swift in Sources */,
 				0E623FF2272BC17F00AD880F /* FoodInputScreenViewController.swift in Sources */,
 				0E623FF7272BF10600AD880F /* FoodTableViewCell.swift in Sources */,
 				0E30D160272B260E00C7D262 /* SceneDelegate.swift in Sources */,
-				0E623FE6272B33A500AD880F /* HomeViewController.swift in Sources */,
 				0E623FFC272BF90300AD880F /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

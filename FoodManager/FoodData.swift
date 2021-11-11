@@ -12,6 +12,7 @@ import FirebaseAuth
 class FoodData: NSObject {
     var id: String
     var food: String
+    var foodArray: [String]
     var number: Int
     var plice: Int
     var pliceArray: [Int]
@@ -22,6 +23,7 @@ class FoodData: NSObject {
         self.id = document.documentID
         let foodDic = document.data()
         self.food = foodDic["food"] as! String
+        self.foodArray = [self.food]
         self.number = foodDic["number"] as! Int
         self.plice = foodDic["plice"] as! Int
         self.pliceArray = [self.plice]
