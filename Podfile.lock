@@ -326,6 +326,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.6)
     - GoogleUtilities/UserDefaults (~> 7.6)
     - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseOAuthUI (12.0.2):
+    - FirebaseAuth (~> 8.0)
+    - FirebaseAuthUI (< 13.0, >= 12.0.2)
   - FirebaseUI/Auth (12.0.2):
     - FirebaseAuthUI (~> 12.0)
   - FirebaseUI/Email (12.0.2):
@@ -334,6 +337,8 @@ PODS:
     - FirebaseFacebookAuthUI (~> 12.0)
   - FirebaseUI/Google (12.0.2):
     - FirebaseGoogleAuthUI (~> 12.0)
+  - FirebaseUI/OAuth (12.0.2):
+    - FirebaseOAuthUI (~> 12.0)
   - GoogleAppMeasurement (8.4.0):
     - GoogleAppMeasurement/AdIdSupport (= 8.4.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
@@ -403,7 +408,6 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.0)
   - leveldb-library (1.22.1)
-  - LTMorphingLabel (0.9.3)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -411,7 +415,6 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
   - SVProgressHUD (2.2.5)
-  - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
   - Charts
@@ -423,9 +426,8 @@ DEPENDENCIES:
   - FirebaseUI/Email
   - FirebaseUI/Facebook
   - FirebaseUI/Google
-  - LTMorphingLabel
+  - FirebaseUI/OAuth
   - SVProgressHUD
-  - TinyConstraints
 
 SPEC REPOS:
   trunk:
@@ -448,6 +450,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseGoogleAuthUI
     - FirebaseInstallations
+    - FirebaseOAuthUI
     - FirebaseUI
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -458,11 +461,9 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - leveldb-library
-    - LTMorphingLabel
     - nanopb
     - PromisesObjC
     - SVProgressHUD
-    - TinyConstraints
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -484,6 +485,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: 99613cefa9102c08da94f584faa5adfaf21f31da
   FirebaseGoogleAuthUI: 6981c0c3c054367f9ccd730fbcf483504deb0a68
   FirebaseInstallations: caa7c8e0d3e2345b8829d2fa9ca1b4dfbf2fcc85
+  FirebaseOAuthUI: 8dc3d0270781133b10b2666d1163cd298501f453
   FirebaseUI: b04b32ead3a6dcd5a50829e14b8f3f6d044d5d62
   GoogleAppMeasurement: 6b6a08fd9c71f4dbc89e0e812acca81d797aa342
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
@@ -494,12 +496,10 @@ SPEC CHECKSUMS:
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
-  LTMorphingLabel: f2b256e4fe665aac27f0d0e8ccdcd79590f0cd70
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: a16349382858fc90be4f3f538f71782fd14da48e
+PODFILE CHECKSUM: 6ef3f535c8c82fc94113dde960177947265ad136
 
 COCOAPODS: 1.11.2

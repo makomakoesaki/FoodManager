@@ -1,5 +1,5 @@
 //
-//  Const.swift
+//  Collection.swift
 //  FoodManager
 //
 //  Created by ESAKI MAKOTO on 2021/10/29.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Const {
-    static let FoodPath = "foods"
+struct Collection {
+    static let documentPath = "documents"
 }

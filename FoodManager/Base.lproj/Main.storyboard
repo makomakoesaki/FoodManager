@@ -8,20 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ホーム-->
+        <!--一覧-->
         <scene sceneID="JlT-yg-g7Z">
             <objects>
-                <viewController storyboardIdentifier="Home" id="UrJ-xj-yZQ" customClass="HomeViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonthlyTotalAmount" id="UrJ-xj-yZQ" customClass="MonthlyTotalAmountViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cI-6E-INq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総出費額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-B0-q5H">
-                                <rect key="frame" x="130" y="76" width="115" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-5L-YiP">
                                 <rect key="frame" x="0.0" y="192" width="375" height="537"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,6 +30,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総出金額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-B0-q5H">
+                                <rect key="frame" x="130" y="91" width="115" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QvZ-hl-7ta"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,41 +44,45 @@
                             <constraint firstItem="Wv4-B0-q5H" firstAttribute="leading" secondItem="QvZ-hl-7ta" secondAttribute="leading" constant="130" id="BPI-cS-UyR"/>
                             <constraint firstItem="Wv4-B0-q5H" firstAttribute="centerX" secondItem="8cI-6E-INq" secondAttribute="centerX" id="EXy-B4-eaK"/>
                             <constraint firstItem="TCe-8D-d8k" firstAttribute="centerX" secondItem="Wv4-B0-q5H" secondAttribute="centerX" constant="-0.5" id="PJR-29-dA8"/>
-                            <constraint firstItem="Wv4-B0-q5H" firstAttribute="top" secondItem="QvZ-hl-7ta" secondAttribute="top" constant="32" id="f6C-Hn-LqA"/>
-                            <constraint firstItem="TCe-8D-d8k" firstAttribute="top" secondItem="Wv4-B0-q5H" secondAttribute="bottom" constant="23.666666666666671" id="oDm-Ht-aWe"/>
+                            <constraint firstItem="Wv4-B0-q5H" firstAttribute="top" secondItem="QvZ-hl-7ta" secondAttribute="top" constant="47" id="f6C-Hn-LqA"/>
+                            <constraint firstItem="TCe-8D-d8k" firstAttribute="top" secondItem="Wv4-B0-q5H" secondAttribute="bottom" constant="8.6666666666666714" id="oDm-Ht-aWe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ホーム" image="home" id="wFm-iA-PdE"/>
+                    <tabBarItem key="tabBarItem" title="一覧" image="eyes" catalog="system" id="wFm-iA-PdE"/>
                     <connections>
-                        <outlet property="tableView" destination="bVV-5L-YiP" id="P6q-CM-GH8"/>
-                        <outlet property="totalValue" destination="TCe-8D-d8k" id="he2-I8-QrW"/>
+                        <outlet property="tableView" destination="bVV-5L-YiP" id="Ili-5m-4v8"/>
+                        <outlet property="totalValue" destination="TCe-8D-d8k" id="gBj-nq-AqO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dJ-3E-Tmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1231.2" y="793.5960591133005"/>
         </scene>
-        <!--Food Management View Controller-->
+        <!--Document View Controller-->
         <scene sceneID="LcD-yl-h7j">
             <objects>
-                <viewController storyboardIdentifier="Management" id="WWz-Eg-vAo" customClass="FoodManagementViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Search" id="WWz-Eg-vAo" customClass="DocumentViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N9M-Ek-Vcq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-OB-bzi">
-                                <rect key="frame" x="0.0" y="126" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="検索したいキーワード" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14V-Rn-hTf">
-                                <rect key="frame" x="16" y="88" width="343" height="27"/>
+                            <searchBar contentMode="redraw" placeholder="キーワードを入力" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14V-Rn-hTf">
+                                <rect key="frame" x="16" y="102" width="343" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="E9L-lS-oU2">
-                                <rect key="frame" x="67" y="44" width="241" height="30"/>
+                                <rect key="frame" x="67" y="60" width="241" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="出費情報を登録する"/>
+                                <state key="normal" title="データを登録する"/>
                                 <connections>
                                     <segue destination="ObO-BO-qQe" kind="show" id="SNJ-G2-bBm"/>
                                 </connections>
@@ -87,22 +91,21 @@
                         <viewLayoutGuide key="safeArea" id="RS6-Cn-nG7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="14V-Rn-hTf" firstAttribute="leading" secondItem="RS6-Cn-nG7" secondAttribute="leading" constant="16" id="4PA-2B-enX"/>
-                            <constraint firstItem="14V-Rn-hTf" firstAttribute="top" secondItem="RS6-Cn-nG7" secondAttribute="top" constant="44" id="50W-jE-u4w"/>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="top" secondItem="E9L-lS-oU2" secondAttribute="bottom" constant="52" id="B4N-Sp-jLK"/>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="leading" secondItem="14V-Rn-hTf" secondAttribute="leading" constant="-16" id="EKZ-be-T1d"/>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="top" secondItem="14V-Rn-hTf" secondAttribute="bottom" constant="11" id="FBC-lN-7r6"/>
-                            <constraint firstItem="14V-Rn-hTf" firstAttribute="trailing" secondItem="RS6-Cn-nG7" secondAttribute="trailing" constant="-16" id="XxX-8L-mrc"/>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="trailing" secondItem="14V-Rn-hTf" secondAttribute="trailing" constant="16" id="jhg-W4-fcB"/>
+                            <constraint firstItem="Om2-OB-bzi" firstAttribute="top" secondItem="E9L-lS-oU2" secondAttribute="bottom" constant="53" id="B4N-Sp-jLK"/>
+                            <constraint firstItem="14V-Rn-hTf" firstAttribute="leading" secondItem="N9M-Ek-Vcq" secondAttribute="leadingMargin" id="NXv-EP-J6Q"/>
+                            <constraint firstItem="Om2-OB-bzi" firstAttribute="leading" secondItem="RS6-Cn-nG7" secondAttribute="leading" id="UjG-M2-LtT"/>
+                            <constraint firstItem="Om2-OB-bzi" firstAttribute="top" secondItem="14V-Rn-hTf" secondAttribute="bottom" constant="2" id="WXe-1r-hfO"/>
+                            <constraint firstItem="Om2-OB-bzi" firstAttribute="centerX" secondItem="14V-Rn-hTf" secondAttribute="centerX" id="cK9-SU-kHc"/>
                             <constraint firstItem="Om2-OB-bzi" firstAttribute="bottom" secondItem="RS6-Cn-nG7" secondAttribute="bottom" id="jr0-Wq-3Bm"/>
+                            <constraint firstItem="Om2-OB-bzi" firstAttribute="centerX" secondItem="E9L-lS-oU2" secondAttribute="centerX" id="snF-1S-bnw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DVa-cG-ezN">
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="14V-Rn-hTf" id="XgM-nt-sGe"/>
-                        <outlet property="tableView" destination="Om2-OB-bzi" id="wSc-Em-BE4"/>
+                        <outlet property="searchBar" destination="14V-Rn-hTf" id="WOQ-Qe-ltB"/>
+                        <outlet property="tableView" destination="Om2-OB-bzi" id="IgE-10-vHq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhw-eG-dTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -112,100 +115,264 @@
         <!--設定-->
         <scene sceneID="Ase-Yd-3JP">
             <objects>
-                <viewController storyboardIdentifier="Set" id="2sE-Vs-BOY" customClass="SettingViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Set" id="2sE-Vs-BOY" customClass="SettingTableViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jty-6k-KUp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcP-D1-dHD">
-                                <rect key="frame" x="149" y="478" width="77" height="30"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="x7s-XF-vUy">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ログアウト"/>
-                                <connections>
-                                    <action selector="handoleLogoutButton:" destination="2sE-Vs-BOY" eventType="touchUpInside" id="7mr-b6-XO0"/>
-                                    <segue destination="RPL-1w-Cwq" kind="show" id="UXs-JV-vKA"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OQg-ud-IJy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="設定" image="setting" id="9To-Rh-2FC"/>
+                    <tabBarItem key="tabBarItem" title="設定" image="gearshape" catalog="system" id="9To-Rh-2FC"/>
+                    <connections>
+                        <outlet property="tableView" destination="x7s-XF-vUy" id="hnF-2d-iqV"/>
+                        <segue destination="WHp-g1-7xC" kind="show" identifier="UpdateNotice" id="WW7-jy-45h"/>
+                        <segue destination="EZO-lD-rbg" kind="show" identifier="ScheduledToBeUpdated" id="N7O-Lu-L0Q"/>
+                        <segue destination="g84-Eb-fhf" kind="show" identifier="FailureInformation" id="wfc-8o-HKz"/>
+                        <segue destination="RPL-1w-Cwq" kind="show" identifier="Login" id="IXI-tF-3HZ"/>
+                        <segue destination="AMt-Iy-Q1i" kind="show" identifier="Manual" id="118-y2-dL5"/>
+                        <segue destination="rXI-0X-3Pt" kind="show" identifier="Question" id="HTa-4O-nxf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlg-n4-jZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="793.5960591133005"/>
+            <point key="canvasLocation" x="1746" y="794"/>
         </scene>
-        <!--Food Input Screen View Controller-->
+        <!--Update Notice View Controller-->
+        <scene sceneID="bgc-Gb-LSB">
+            <objects>
+                <viewController id="WHp-g1-7xC" customClass="UpdateNoticeViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gFA-d2-RK1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4jh-yI-p5t">
+                                <rect key="frame" x="16" y="70" width="343" height="654"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更新のお知らせ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V8-wo-sl2">
+                                <rect key="frame" x="109" y="20" width="156" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xf3-DL-aDW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Uj-iy-9Gc"/>
+                    <connections>
+                        <outlet property="updateNoticeText" destination="4jh-yI-p5t" id="N6E-Ym-RsV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPG-kU-fgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2591" y="1504"/>
+        </scene>
+        <!--Document Register View Controller-->
         <scene sceneID="yeC-da-3IG">
             <objects>
-                <viewController storyboardIdentifier="InputScreen" modalPresentationStyle="fullScreen" id="ObO-BO-qQe" customClass="FoodInputScreenViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputScreen" modalPresentationStyle="fullScreen" id="ObO-BO-qQe" customClass="DocumentRegisterViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LZ7-bn-x9T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-d4-5RY">
-                                <rect key="frame" x="152" y="374" width="71" height="64"/>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="品名を入力して下さい（14文字以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-qo-blK">
+                                <rect key="frame" x="50" y="294" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="金額を入力して下さい（8桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-if-xkM">
+                                <rect key="frame" x="50" y="349" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-d4-5RY">
+                                <rect key="frame" x="156" y="423" width="63" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="登録"/>
                                 <connections>
-                                    <action selector="registerButton:" destination="ObO-BO-qQe" eventType="touchUpInside" id="Bhd-b4-6mk"/>
+                                    <action selector="registerButton:" destination="ObO-BO-qQe" eventType="touchUpInside" id="vZv-rt-0nh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="品名を入力して下さい（10文字以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-qo-blK">
-                                <rect key="frame" x="50" y="203" width="275" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="chL-8c-o9g"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="個数を入力して下さい（5桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74N-Io-rWz">
-                                <rect key="frame" x="50" y="257" width="275" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="H9k-cj-HZC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="値段を入力して下さい（5桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-if-xkM">
-                                <rect key="frame" x="50" y="312" width="275" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="fKp-s9-bk9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2To-T8-A2b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0Ms-qo-blK" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="50" id="180-7N-C3h"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="top" secondItem="0Ms-qo-blK" secondAttribute="bottom" constant="20" id="B0w-kZ-9wV"/>
-                            <constraint firstItem="0Ms-qo-blK" firstAttribute="top" secondItem="2To-T8-A2b" secondAttribute="top" constant="159" id="Cs1-TY-O8n"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="50" id="HL8-FC-pzl"/>
-                            <constraint firstItem="cUF-d4-5RY" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="152" id="M69-Qn-pcT"/>
-                            <constraint firstItem="7iW-if-xkM" firstAttribute="top" secondItem="74N-Io-rWz" secondAttribute="bottom" constant="20" id="RU0-Kc-tfu"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="0Ms-qo-blK" secondAttribute="trailing" constant="50" id="Uau-cQ-nDb"/>
-                            <constraint firstItem="74N-Io-rWz" firstAttribute="leading" secondItem="2To-T8-A2b" secondAttribute="leading" constant="50" id="X8v-fp-OLD"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="7iW-if-xkM" secondAttribute="trailing" constant="50" id="Yfy-Sw-kx0"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="74N-Io-rWz" secondAttribute="trailing" constant="50" id="fP1-d5-ysZ"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="trailing" secondItem="cUF-d4-5RY" secondAttribute="trailing" constant="152" id="fW9-aT-WaZ"/>
-                            <constraint firstItem="2To-T8-A2b" firstAttribute="bottom" secondItem="cUF-d4-5RY" secondAttribute="bottom" constant="291" id="ijX-Qj-M9L"/>
-                            <constraint firstItem="cUF-d4-5RY" firstAttribute="top" secondItem="7iW-if-xkM" secondAttribute="bottom" constant="28" id="ywc-NU-eJX"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mca-ct-GoX">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="MmL-ct-yVi"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="foodText" destination="0Ms-qo-blK" id="uke-35-nmi"/>
-                        <outlet property="numberText" destination="74N-Io-rWz" id="Jtv-nh-NOj"/>
-                        <outlet property="pliceText" destination="7iW-if-xkM" id="nzz-OU-KbB"/>
+                        <outlet property="priceText" destination="7iW-if-xkM" id="dPM-gU-TdX"/>
+                        <outlet property="productNameText" destination="0Ms-qo-blK" id="Ebm-LP-owp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRL-a4-9nU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909.60000000000002" y="1504.4334975369459"/>
+        </scene>
+        <!--Scheduled Updated View Controller-->
+        <scene sceneID="IfR-Pw-x4y">
+            <objects>
+                <viewController id="EZO-lD-rbg" customClass="ScheduledUpdatedViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yRL-qh-TZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更新予定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7V-wa-kbT">
+                                <rect key="frame" x="109" y="10" width="156" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v4R-rV-IE3">
+                                <rect key="frame" x="16" y="60" width="343" height="654"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qrK-Do-rEb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6dX-QO-mtx"/>
+                    <connections>
+                        <outlet property="scheduledUpdatedText" destination="v4R-rV-IE3" id="UgL-Kd-bbu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ucl-c2-FiN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="1504"/>
+        </scene>
+        <!--Failure Information View Controller-->
+        <scene sceneID="nfo-CB-7yR">
+            <objects>
+                <viewController id="g84-Eb-fhf" customClass="FailureInformationViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PfP-wm-IU0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m26-oh-oY8">
+                                <rect key="frame" x="16" y="70" width="343" height="654"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="障害情報" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz2-3U-r1L">
+                                <rect key="frame" x="109" y="20" width="156" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E2D-R4-2O7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hTW-ox-Byg"/>
+                    <connections>
+                        <outlet property="failureInformationText" destination="m26-oh-oY8" id="LwZ-nb-ygc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77p-O6-leZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="794"/>
+        </scene>
+        <!--Manual View Controller-->
+        <scene sceneID="sih-Ga-sJx">
+            <objects>
+                <viewController id="AMt-Iy-Q1i" customClass="ManualViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoh-Uo-7oU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="説明書" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naD-5E-M42">
+                                <rect key="frame" x="109" y="20" width="156" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wp4-4G-jOH">
+                                <rect key="frame" x="16" y="70" width="343" height="654"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qtl-CK-B7m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Be4-sv-ec2"/>
+                    <connections>
+                        <outlet property="manualText" destination="Wp4-4G-jOH" id="2cN-DB-hDQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKR-Rz-AMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="87"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="Uh8-zy-dZK">
+            <objects>
+                <viewController id="rXI-0X-3Pt" customClass="QuestionViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NXA-5O-Qxe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="よくある質問" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nds-ys-E6b">
+                                <rect key="frame" x="109" y="20" width="156" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f7A-t0-7BT">
+                                <rect key="frame" x="16" y="70" width="343" height="654"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pE4-iz-8UR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="13V-nu-mqv"/>
+                    <connections>
+                        <outlet property="questionText" destination="f7A-t0-7BT" id="yZK-sx-72N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJv-Lu-ZNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2553" y="86"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5sM-3v-BVF">
@@ -244,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="156" y="54"/>
         </scene>
-        <!--出金レポート-->
+        <!--グラフ-->
         <scene sceneID="IGl-ex-jW4">
             <objects>
                 <viewController id="Myk-Xm-Ovs" customClass="ChartViewController" customModule="FoodManager" sceneMemberID="viewController">
@@ -264,6 +431,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKz-Go-ZRS">
+                                <rect key="frame" x="129" y="55" width="117" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gNq-K4-rva"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -274,20 +448,21 @@
                             <constraint firstItem="q2M-ik-qbq" firstAttribute="leading" secondItem="gNq-K4-rva" secondAttribute="leading" id="oFu-V8-osV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="出金レポート" image="chart.bar" catalog="system" id="ueM-9M-cib"/>
+                    <tabBarItem key="tabBarItem" title="グラフ" image="chart.bar" catalog="system" id="ueM-9M-cib"/>
                     <connections>
                         <outlet property="scrollView" destination="8Wf-i3-jWS" id="FrI-NI-oWR"/>
+                        <outlet property="yearLabel" destination="YKz-Go-ZRS" id="q2f-uP-U3v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yd-dX-gW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-530.39999999999998" y="793.5960591133005"/>
         </scene>
-        <!--出費管理-->
+        <!--編集-->
         <scene sceneID="TjW-9v-XPz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jZf-sE-UA8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="出費管理" image="apple" id="3Kq-ij-Zae"/>
+                    <tabBarItem key="tabBarItem" title="編集" image="highlighter" catalog="system" id="3Kq-ij-Zae"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y7k-el-RSX">
@@ -304,10 +479,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple" width="25" height="25"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
-        <image name="home" width="25" height="25"/>
-        <image name="setting" width="25" height="25"/>
+        <image name="eyes" catalog="system" width="128" height="99"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="highlighter" catalog="system" width="128" height="119"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

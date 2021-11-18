@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuthUI
+import FirebaseOAuthUI
 import FirebaseEmailAuthUI
 import FirebaseFacebookAuthUI
 import FirebaseGoogleAuthUI
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.authUI.delegate = self
-        let providers: [FUIAuthProvider] = [FUIEmailAuth(),FUIGoogleAuth(authUI: self.authUI),FUIFacebookAuth(authUI: self.authUI)]
+        let providers: [FUIAuthProvider] = [FUIOAuth.appleAuthProvider(),FUIGoogleAuth(authUI: self.authUI),FUIFacebookAuth(authUI: self.authUI),FUIOAuth.twitterAuthProvider(),FUIEmailAuth()]
         self.authUI.providers = providers
     }
     
@@ -37,6 +38,6 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: FUIAuthDelegate {
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
-        return FUICustomAuthPickerViewController(authUI: authUI)
+        return LoginCustomViewController(authUI: authUI)
     }
 }

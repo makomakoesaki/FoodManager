@@ -13,22 +13,27 @@
 		0E30D167272B260E00C7D262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E30D166272B260E00C7D262 /* Assets.xcassets */; };
 		0E30D16A272B260E00C7D262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E30D168272B260E00C7D262 /* LaunchScreen.storyboard */; };
 		0E30D172272B28E200C7D262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E30D171272B28E200C7D262 /* GoogleService-Info.plist */; };
-		0E623FE8272B33B200AD880F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FE7272B33B200AD880F /* SettingViewController.swift */; };
-		0E623FEA272B33CF00AD880F /* FoodManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FE9272B33CF00AD880F /* FoodManagementViewController.swift */; };
+		0E623FEA272B33CF00AD880F /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FE9272B33CF00AD880F /* DocumentViewController.swift */; };
 		0E623FEE272B343C00AD880F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FED272B343C00AD880F /* TabBarController.swift */; };
-		0E623FF2272BC17F00AD880F /* FoodInputScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FF1272BC17F00AD880F /* FoodInputScreenViewController.swift */; };
+		0E623FF2272BC17F00AD880F /* DocumentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FF1272BC17F00AD880F /* DocumentRegisterViewController.swift */; };
 		0E623FF4272BDC6200AD880F /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E623FF3272BDC6200AD880F /* credentials.plist */; };
-		0E623FF7272BF10600AD880F /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FF5272BF10600AD880F /* FoodTableViewCell.swift */; };
-		0E623FF8272BF10600AD880F /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E623FF6272BF10600AD880F /* FoodTableViewCell.xib */; };
-		0E623FFA272BF37800AD880F /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FF9272BF37800AD880F /* FoodData.swift */; };
-		0E623FFC272BF90300AD880F /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FFB272BF90300AD880F /* Const.swift */; };
-		0E708015272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */; };
+		0E623FF7272BF10600AD880F /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FF5272BF10600AD880F /* DocumentTableViewCell.swift */; };
+		0E623FF8272BF10600AD880F /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E623FF6272BF10600AD880F /* DocumentTableViewCell.xib */; };
+		0E623FFA272BF37800AD880F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FF9272BF37800AD880F /* Document.swift */; };
+		0E623FFC272BF90300AD880F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E623FFB272BF90300AD880F /* Collection.swift */; };
+		0E708015272E5E8200A6BC85 /* LoginCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E708013272E5E8200A6BC85 /* LoginCustomViewController.swift */; };
 		0E708018272E71B300A6BC85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E708017272E71B300A6BC85 /* LoginViewController.swift */; };
 		0E7CD0032733EF2D0090673B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CD0022733EF2D0090673B /* ChartViewController.swift */; };
-		0EB58762273B8864007B1B8E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB58760273B8864007B1B8E /* HomeViewController.swift */; };
-		0EB58766273B88DB007B1B8E /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB58764273B88DB007B1B8E /* MonthTableViewCell.swift */; };
-		0EB58767273B88DB007B1B8E /* MonthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB58765273B88DB007B1B8E /* MonthTableViewCell.xib */; };
-		143AD15334385D9A02495AFA /* Pods_FoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E15F6979AE88275FB1A4935 /* Pods_FoodManager.framework */; };
+		0E8C39042744C0B40088B342 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C39022744C0B40088B342 /* SettingTableViewController.swift */; };
+		0E8C39072744FF880088B342 /* UpdateNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C39062744FF880088B342 /* UpdateNoticeViewController.swift */; };
+		0E8C390927450D340088B342 /* ScheduledUpdatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C390827450D340088B342 /* ScheduledUpdatedViewController.swift */; };
+		0E8C390B27450D4D0088B342 /* FailureInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C390A27450D4D0088B342 /* FailureInformationViewController.swift */; };
+		0E8C390D274513260088B342 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C390C274513260088B342 /* ManualViewController.swift */; };
+		0E8C390F274513350088B342 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C390E274513350088B342 /* QuestionViewController.swift */; };
+		0EB58762273B8864007B1B8E /* MonthlyTotalAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB58760273B8864007B1B8E /* MonthlyTotalAmountViewController.swift */; };
+		0EB58766273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB58764273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.swift */; };
+		0EB58767273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB58765273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.xib */; };
+		7FC243A8815075E4A47D97F2 /* Pods_FoodManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A5A1AE115400BC9C6CD1FC /* Pods_FoodManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,24 +45,30 @@
 		0E30D169272B260E00C7D262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E30D16B272B260E00C7D262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E30D171272B28E200C7D262 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0E623FE7272B33B200AD880F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		0E623FE9272B33CF00AD880F /* FoodManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodManagementViewController.swift; sourceTree = "<group>"; };
+		0E623FE9272B33CF00AD880F /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		0E623FED272B343C00AD880F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		0E623FF1272BC17F00AD880F /* FoodInputScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInputScreenViewController.swift; sourceTree = "<group>"; };
+		0E623FF1272BC17F00AD880F /* DocumentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRegisterViewController.swift; sourceTree = "<group>"; };
 		0E623FF3272BDC6200AD880F /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
-		0E623FF5272BF10600AD880F /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
-		0E623FF6272BF10600AD880F /* FoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
-		0E623FF9272BF37800AD880F /* FoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
-		0E623FFB272BF90300AD880F /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FUICustomAuthPickerViewController.swift; sourceTree = "<group>"; };
+		0E623FF5272BF10600AD880F /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
+		0E623FF6272BF10600AD880F /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
+		0E623FF9272BF37800AD880F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		0E623FFB272BF90300AD880F /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		0E708013272E5E8200A6BC85 /* LoginCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCustomViewController.swift; sourceTree = "<group>"; };
 		0E708017272E71B300A6BC85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0E7CD0022733EF2D0090673B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
-		0EB58760273B8864007B1B8E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		0EB58764273B88DB007B1B8E /* MonthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
-		0EB58765273B88DB007B1B8E /* MonthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthTableViewCell.xib; sourceTree = "<group>"; };
-		2E15F6979AE88275FB1A4935 /* Pods_FoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BAFEB922C45BA1CD2DFBBA4 /* Pods-FoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.debug.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.debug.xcconfig"; sourceTree = "<group>"; };
-		7DF3546C463564BF7950905B /* Pods-FoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.release.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.release.xcconfig"; sourceTree = "<group>"; };
+		0E8C39022744C0B40088B342 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		0E8C39062744FF880088B342 /* UpdateNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoticeViewController.swift; sourceTree = "<group>"; };
+		0E8C390827450D340088B342 /* ScheduledUpdatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledUpdatedViewController.swift; sourceTree = "<group>"; };
+		0E8C390A27450D4D0088B342 /* FailureInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureInformationViewController.swift; sourceTree = "<group>"; };
+		0E8C390C274513260088B342 /* ManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
+		0E8C390E274513350088B342 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		0EB58760273B8864007B1B8E /* MonthlyTotalAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTotalAmountViewController.swift; sourceTree = "<group>"; };
+		0EB58764273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTotalAmountTableViewCell.swift; sourceTree = "<group>"; };
+		0EB58765273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthlyTotalAmountTableViewCell.xib; sourceTree = "<group>"; };
+		0EFC8A66274370870047AAFD /* FoodManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodManager.entitlements; sourceTree = "<group>"; };
+		6E63187F481F055506F8D93F /* Pods-FoodManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.release.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.release.xcconfig"; sourceTree = "<group>"; };
+		7CCFE8AB751A9E04067D53AF /* Pods-FoodManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodManager.debug.xcconfig"; path = "Target Support Files/Pods-FoodManager/Pods-FoodManager.debug.xcconfig"; sourceTree = "<group>"; };
+		B0A5A1AE115400BC9C6CD1FC /* Pods_FoodManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,28 +76,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				143AD15334385D9A02495AFA /* Pods_FoodManager.framework in Frameworks */,
+				7FC243A8815075E4A47D97F2 /* Pods_FoodManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		088AB5ADFAF47F6AA91E0801 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2E15F6979AE88275FB1A4935 /* Pods_FoodManager.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0E30D151272B260E00C7D262 = {
 			isa = PBXGroup;
 			children = (
 				0E30D15C272B260E00C7D262 /* FoodManager */,
 				0E30D15B272B260E00C7D262 /* Products */,
 				24847ABBF0B3EC5B3BFDAA6B /* Pods */,
-				088AB5ADFAF47F6AA91E0801 /* Frameworks */,
+				5CDB0E592900FE41FCFB9EA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,20 +104,26 @@
 		0E30D15C272B260E00C7D262 /* FoodManager */ = {
 			isa = PBXGroup;
 			children = (
+				0EFC8A66274370870047AAFD /* FoodManager.entitlements */,
 				0E30D15D272B260E00C7D262 /* AppDelegate.swift */,
 				0E30D15F272B260E00C7D262 /* SceneDelegate.swift */,
-				0E623FFB272BF90300AD880F /* Const.swift */,
-				0E623FE7272B33B200AD880F /* SettingViewController.swift */,
+				0E623FFB272BF90300AD880F /* Collection.swift */,
+				0E623FF9272BF37800AD880F /* Document.swift */,
+				0E8C390E274513350088B342 /* QuestionViewController.swift */,
+				0E8C390C274513260088B342 /* ManualViewController.swift */,
+				0E8C390A27450D4D0088B342 /* FailureInformationViewController.swift */,
+				0E8C390827450D340088B342 /* ScheduledUpdatedViewController.swift */,
+				0E8C39062744FF880088B342 /* UpdateNoticeViewController.swift */,
+				0E8C39022744C0B40088B342 /* SettingTableViewController.swift */,
 				0E7CD0022733EF2D0090673B /* ChartViewController.swift */,
-				0E623FF9272BF37800AD880F /* FoodData.swift */,
-				0E623FF1272BC17F00AD880F /* FoodInputScreenViewController.swift */,
-				0E623FF5272BF10600AD880F /* FoodTableViewCell.swift */,
-				0E623FF6272BF10600AD880F /* FoodTableViewCell.xib */,
-				0E623FE9272B33CF00AD880F /* FoodManagementViewController.swift */,
-				0EB58764273B88DB007B1B8E /* MonthTableViewCell.swift */,
-				0EB58765273B88DB007B1B8E /* MonthTableViewCell.xib */,
-				0EB58760273B8864007B1B8E /* HomeViewController.swift */,
-				0E708013272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift */,
+				0E623FF6272BF10600AD880F /* DocumentTableViewCell.xib */,
+				0E623FF5272BF10600AD880F /* DocumentTableViewCell.swift */,
+				0E623FF1272BC17F00AD880F /* DocumentRegisterViewController.swift */,
+				0E623FE9272B33CF00AD880F /* DocumentViewController.swift */,
+				0EB58765273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.xib */,
+				0EB58764273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.swift */,
+				0EB58760273B8864007B1B8E /* MonthlyTotalAmountViewController.swift */,
+				0E708013272E5E8200A6BC85 /* LoginCustomViewController.swift */,
 				0E708017272E71B300A6BC85 /* LoginViewController.swift */,
 				0E623FED272B343C00AD880F /* TabBarController.swift */,
 				0E30D163272B260E00C7D262 /* Main.storyboard */,
@@ -130,10 +139,18 @@
 		24847ABBF0B3EC5B3BFDAA6B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4BAFEB922C45BA1CD2DFBBA4 /* Pods-FoodManager.debug.xcconfig */,
-				7DF3546C463564BF7950905B /* Pods-FoodManager.release.xcconfig */,
+				7CCFE8AB751A9E04067D53AF /* Pods-FoodManager.debug.xcconfig */,
+				6E63187F481F055506F8D93F /* Pods-FoodManager.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5CDB0E592900FE41FCFB9EA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0A5A1AE115400BC9C6CD1FC /* Pods_FoodManager.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,12 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E30D16E272B260E00C7D262 /* Build configuration list for PBXNativeTarget "FoodManager" */;
 			buildPhases = (
-				26ABD1240404CFEC222D87C1 /* [CP] Check Pods Manifest.lock */,
+				64E64F1041B333CA8A66AC33 /* [CP] Check Pods Manifest.lock */,
 				0E30D156272B260E00C7D262 /* Sources */,
 				0E30D157272B260E00C7D262 /* Frameworks */,
 				0E30D158272B260E00C7D262 /* Resources */,
-				E09717CA6C4DEF597B392202 /* [CP] Embed Pods Frameworks */,
-				ED0436F13B92E8461F07C2B1 /* [CP] Copy Pods Resources */,
+				B63FE7FD3073C7707B7F4ECA /* [CP] Embed Pods Frameworks */,
+				B82DEF088F1B54FC27BE4164 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,19 +214,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E30D16A272B260E00C7D262 /* LaunchScreen.storyboard in Resources */,
-				0EB58767273B88DB007B1B8E /* MonthTableViewCell.xib in Resources */,
+				0EB58767273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.xib in Resources */,
 				0E30D172272B28E200C7D262 /* GoogleService-Info.plist in Resources */,
 				0E623FF4272BDC6200AD880F /* credentials.plist in Resources */,
 				0E30D167272B260E00C7D262 /* Assets.xcassets in Resources */,
 				0E30D165272B260E00C7D262 /* Main.storyboard in Resources */,
-				0E623FF8272BF10600AD880F /* FoodTableViewCell.xib in Resources */,
+				0E623FF8272BF10600AD880F /* DocumentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26ABD1240404CFEC222D87C1 /* [CP] Check Pods Manifest.lock */ = {
+		64E64F1041B333CA8A66AC33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,7 +248,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E09717CA6C4DEF597B392202 /* [CP] Embed Pods Frameworks */ = {
+		B63FE7FD3073C7707B7F4ECA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,7 +265,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodManager/Pods-FoodManager-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ED0436F13B92E8461F07C2B1 /* [CP] Copy Pods Resources */ = {
+		B82DEF088F1B54FC27BE4164 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,20 +289,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8C390F274513350088B342 /* QuestionViewController.swift in Sources */,
+				0E8C390927450D340088B342 /* ScheduledUpdatedViewController.swift in Sources */,
 				0E708018272E71B300A6BC85 /* LoginViewController.swift in Sources */,
-				0E708015272E5E8200A6BC85 /* FUICustomAuthPickerViewController.swift in Sources */,
-				0EB58766273B88DB007B1B8E /* MonthTableViewCell.swift in Sources */,
-				0E623FE8272B33B200AD880F /* SettingViewController.swift in Sources */,
-				0E623FEA272B33CF00AD880F /* FoodManagementViewController.swift in Sources */,
+				0E708015272E5E8200A6BC85 /* LoginCustomViewController.swift in Sources */,
+				0EB58766273B88DB007B1B8E /* MonthlyTotalAmountTableViewCell.swift in Sources */,
+				0E623FEA272B33CF00AD880F /* DocumentViewController.swift in Sources */,
+				0E8C390B27450D4D0088B342 /* FailureInformationViewController.swift in Sources */,
 				0E7CD0032733EF2D0090673B /* ChartViewController.swift in Sources */,
-				0EB58762273B8864007B1B8E /* HomeViewController.swift in Sources */,
+				0EB58762273B8864007B1B8E /* MonthlyTotalAmountViewController.swift in Sources */,
 				0E30D15E272B260E00C7D262 /* AppDelegate.swift in Sources */,
-				0E623FFA272BF37800AD880F /* FoodData.swift in Sources */,
+				0E623FFA272BF37800AD880F /* Document.swift in Sources */,
+				0E8C39042744C0B40088B342 /* SettingTableViewController.swift in Sources */,
 				0E623FEE272B343C00AD880F /* TabBarController.swift in Sources */,
-				0E623FF2272BC17F00AD880F /* FoodInputScreenViewController.swift in Sources */,
-				0E623FF7272BF10600AD880F /* FoodTableViewCell.swift in Sources */,
+				0E623FF2272BC17F00AD880F /* DocumentRegisterViewController.swift in Sources */,
+				0E623FF7272BF10600AD880F /* DocumentTableViewCell.swift in Sources */,
+				0E8C39072744FF880088B342 /* UpdateNoticeViewController.swift in Sources */,
 				0E30D160272B260E00C7D262 /* SceneDelegate.swift in Sources */,
-				0E623FFC272BF90300AD880F /* Const.swift in Sources */,
+				0E8C390D274513260088B342 /* ManualViewController.swift in Sources */,
+				0E623FFC272BF90300AD880F /* Collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,10 +451,11 @@
 		};
 		0E30D16F272B260E00C7D262 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BAFEB922C45BA1CD2DFBBA4 /* Pods-FoodManager.debug.xcconfig */;
+			baseConfigurationReference = 7CCFE8AB751A9E04067D53AF /* Pods-FoodManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodManager/FoodManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYGUJ4MF7T;
 				INFOPLIST_FILE = FoodManager/Info.plist;
@@ -449,10 +472,11 @@
 		};
 		0E30D170272B260E00C7D262 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DF3546C463564BF7950905B /* Pods-FoodManager.release.xcconfig */;
+			baseConfigurationReference = 6E63187F481F055506F8D93F /* Pods-FoodManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodManager/FoodManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYGUJ4MF7T;
 				INFOPLIST_FILE = FoodManager/Info.plist;

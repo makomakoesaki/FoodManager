@@ -1,5 +1,5 @@
 //
-//  FUICustomAuthPickerViewController.swift
+//  LoginCustomViewController.swift
 //  FoodManager
 //
 //  Created by ESAKI MAKOTO on 2021/10/31.
@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuthUI
 
-class FUICustomAuthPickerViewController: FUIAuthPickerViewController,FUIAuthDelegate {
+class LoginCustomViewController: FUIAuthPickerViewController,FUIAuthDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
