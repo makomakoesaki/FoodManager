@@ -17,5 +17,6 @@ pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
 pod 'SVProgressHUD'
 pod 'Charts'
+pod 'Google-Mobile-Ads-SDK'
 
 end

@@ -13,6 +13,7 @@ class Document: NSObject {
     var id: String
     var timestamp: Timestamp
     var timeStampArray: [String] = []
+    var balanceOfPayments: String
     var productName: String
     var price: Int
     
@@ -36,6 +37,7 @@ class Document: NSObject {
         self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
         formatter.dateFormat = "EEE"
         self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
+        self.balanceOfPayments = documentDic["balanceOfPayments"] as! String
         self.productName = documentDic["productName"] as! String
         self.price = documentDic["price"] as! Int
     }

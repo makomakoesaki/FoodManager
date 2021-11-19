@@ -1,5 +1,5 @@
 //
-//  DocumentViewController.swift
+//  SearchViewController.swift
 //  FoodManager
 //
 //  Created by ESAKI MAKOTO on 2021/10/29.
@@ -8,12 +8,14 @@
 import UIKit
 import FirebaseFirestore
 import SVProgressHUD
+import GoogleMobileAds
 
-class DocumentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, GADBannerViewDelegate {
     
     var documentArray: [Document] = []
     var timeStampArray: [String] = []
     var listener: ListenerRegistration?
+    var bannerView: GADBannerView!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -23,12 +25,19 @@ class DocumentViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.isNavigationBarHidden = true
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "DocumentTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "DocumentCell")
+        tableView.endEditing(true)
+        let nib = UINib(nibName: "SearchTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "SearchCell")
         searchBar.delegate = self
         searchBar.resignFirstResponder()
         searchBar.searchBarStyle = .minimal
         searchBar.setShowsCancelButton(true, animated: true)
+        bannerView = GADBannerView(adSize: kGADAdSizeLargeBanner)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +68,7 @@ class DocumentViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentCell", for: indexPath) as! DocumentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.setDocumentData(documentArray[indexPath.row])
         return cell
@@ -83,27 +92,26 @@ class DocumentViewController: UIViewController, UITableViewDelegate, UITableView
                 return
             } else {
                 for document in querySnapShot!.documents {
-                    let productName = document.data()["productName"] as! String
-                    let timestamp = document.data()["timestamp"] as! Timestamp
+                    let documentproductName = document.data()["productName"] as! String
+                    let documentTimestamp = document.data()["timestamp"] as! Timestamp
+                    let documentBalanceOfPayments = document.data()["balanceOfPayments"] as! String
                     let formatter = DateFormatter()
                     formatter.locale = Locale(identifier: "ja_JP")
                     formatter.dateFormat = "yyyy"
-                    self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
+                    self.timeStampArray.append(formatter.string(from: documentTimestamp.dateValue()))
                     formatter.dateFormat = "MM"
-                    self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
+                    self.timeStampArray.append(formatter.string(from: documentTimestamp.dateValue()))
                     formatter.dateFormat = "dd"
-                    self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
+                    self.timeStampArray.append(formatter.string(from: documentTimestamp.dateValue()))
                     formatter.dateFormat = "MMdd"
-                    self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
+                    self.timeStampArray.append(formatter.string(from: documentTimestamp.dateValue()))
                     formatter.dateFormat = "yyyyMM"
-                    self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
+                    self.timeStampArray.append(formatter.string(from: documentTimestamp.dateValue()))
                     formatter.dateFormat = "yyyyMMdd"
-                    self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
+                    self.timeStampArray.append(formatter.string(from: documentTimestamp.dateValue()))
                     formatter.dateFormat = "EEE"
-                    self.timeStampArray.append(formatter.string(from: timestamp.dateValue()))
-                    print(self.timeStampArray)
-                    print(self.searchBar.text!)
-                    if productName == self.searchBar.text {
+                    self.timeStampArray.append(formatter.string(from: documentTimestamp.dateValue()))
+                    if documentproductName == self.searchBar.text {
                         self.documentArray = self.documentArray.filter({ $0.productName.lowercased().contains((self.searchBar.text?.lowercased())!) })
                         print(self.documentArray)
                     }
@@ -111,8 +119,14 @@ class DocumentViewController: UIViewController, UITableViewDelegate, UITableView
                         self.documentArray = self.documentArray.filter({ $0.timeStampArray.contains((self.searchBar.text?.lowercased())!) })
                         print(self.documentArray)
                     }
+                    if documentBalanceOfPayments == self.searchBar.text {
+                        self.documentArray = self.documentArray.filter({ $0.balanceOfPayments.lowercased().contains((self.searchBar.text?.lowercased())!) })
+                        print(self.documentArray)
+                    }
                 }
-                if self.documentArray.filter({ $0.productName == searchBar.text }).isEmpty && self.timeStampArray.contains(self.searchBar.text!) == false {
+                if self.documentArray.filter({ $0.productName == searchBar.text }).isEmpty
+                    && self.timeStampArray.contains(self.searchBar.text!) == false
+                    && self.documentArray.filter({ $0.balanceOfPayments == searchBar.text }).isEmpty {
                     SVProgressHUD.showError(withStatus: "データは見つかりませんでした。")
                     SVProgressHUD.dismiss(withDelay: 1)
                 } else {
@@ -140,5 +154,34 @@ class DocumentViewController: UIViewController, UITableViewDelegate, UITableView
             self.view.endEditing(true)
             self.tableView.reloadData()
         }
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
     }
 }

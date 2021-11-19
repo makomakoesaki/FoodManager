@@ -11,7 +11,7 @@
         <!--一覧-->
         <scene sceneID="JlT-yg-g7Z">
             <objects>
-                <viewController storyboardIdentifier="MonthlyTotalAmount" id="UrJ-xj-yZQ" customClass="MonthlyTotalAmountViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonthlyTotalAmount" id="UrJ-xj-yZQ" customClass="ListViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cI-6E-INq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,34 +22,47 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-8D-d8k">
-                                <rect key="frame" x="40" y="120" width="294" height="44"/>
+                                <rect key="frame" x="40" y="92.666666666666671" width="294" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="fqw-DB-vkd"/>
+                                    <constraint firstAttribute="height" constant="35" id="fqw-DB-vkd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総出金額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-B0-q5H">
-                                <rect key="frame" x="130" y="91" width="115" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv4-B0-q5H">
+                                <rect key="frame" x="130" y="61" width="115" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="My8-qg-UPG">
+                                <rect key="frame" x="40" y="141" width="294" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="支出"/>
+                                    <segment title="収入"/>
+                                    <segment title="差額"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setAction:" destination="UrJ-xj-yZQ" eventType="valueChanged" id="sv1-fU-UIS"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QvZ-hl-7ta"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QvZ-hl-7ta" firstAttribute="trailing" secondItem="TCe-8D-d8k" secondAttribute="trailing" constant="41" id="BOT-Uk-qJp"/>
                             <constraint firstItem="Wv4-B0-q5H" firstAttribute="leading" secondItem="QvZ-hl-7ta" secondAttribute="leading" constant="130" id="BPI-cS-UyR"/>
                             <constraint firstItem="Wv4-B0-q5H" firstAttribute="centerX" secondItem="8cI-6E-INq" secondAttribute="centerX" id="EXy-B4-eaK"/>
                             <constraint firstItem="TCe-8D-d8k" firstAttribute="centerX" secondItem="Wv4-B0-q5H" secondAttribute="centerX" constant="-0.5" id="PJR-29-dA8"/>
-                            <constraint firstItem="Wv4-B0-q5H" firstAttribute="top" secondItem="QvZ-hl-7ta" secondAttribute="top" constant="47" id="f6C-Hn-LqA"/>
-                            <constraint firstItem="TCe-8D-d8k" firstAttribute="top" secondItem="Wv4-B0-q5H" secondAttribute="bottom" constant="8.6666666666666714" id="oDm-Ht-aWe"/>
+                            <constraint firstItem="Wv4-B0-q5H" firstAttribute="top" secondItem="QvZ-hl-7ta" secondAttribute="top" constant="17" id="f6C-Hn-LqA"/>
+                            <constraint firstItem="TCe-8D-d8k" firstAttribute="top" secondItem="Wv4-B0-q5H" secondAttribute="bottom" constant="7.6666666666666714" id="oDm-Ht-aWe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="一覧" image="eyes" catalog="system" id="wFm-iA-PdE"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="My8-qg-UPG" id="vEf-ja-SsX"/>
                         <outlet property="tableView" destination="bVV-5L-YiP" id="Ili-5m-4v8"/>
                         <outlet property="totalValue" destination="TCe-8D-d8k" id="gBj-nq-AqO"/>
                     </connections>
@@ -58,48 +71,40 @@
             </objects>
             <point key="canvasLocation" x="-1231.2" y="793.5960591133005"/>
         </scene>
-        <!--Document View Controller-->
+        <!--検索-->
         <scene sceneID="LcD-yl-h7j">
             <objects>
-                <viewController storyboardIdentifier="Search" id="WWz-Eg-vAo" customClass="DocumentViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Search" id="WWz-Eg-vAo" customClass="SearchViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N9M-Ek-Vcq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-OB-bzi">
-                                <rect key="frame" x="0.0" y="155" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="97" width="375" height="632"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="キーワードを入力" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14V-Rn-hTf">
-                                <rect key="frame" x="16" y="102" width="343" height="51"/>
+                            <searchBar contentMode="redraw" placeholder="キーワードから探す" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14V-Rn-hTf">
+                                <rect key="frame" x="16" y="44" width="343" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="E9L-lS-oU2">
-                                <rect key="frame" x="67" y="60" width="241" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="データを登録する"/>
-                                <connections>
-                                    <segue destination="ObO-BO-qQe" kind="show" id="SNJ-G2-bBm"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RS6-Cn-nG7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="top" secondItem="E9L-lS-oU2" secondAttribute="bottom" constant="53" id="B4N-Sp-jLK"/>
                             <constraint firstItem="14V-Rn-hTf" firstAttribute="leading" secondItem="N9M-Ek-Vcq" secondAttribute="leadingMargin" id="NXv-EP-J6Q"/>
                             <constraint firstItem="Om2-OB-bzi" firstAttribute="leading" secondItem="RS6-Cn-nG7" secondAttribute="leading" id="UjG-M2-LtT"/>
                             <constraint firstItem="Om2-OB-bzi" firstAttribute="top" secondItem="14V-Rn-hTf" secondAttribute="bottom" constant="2" id="WXe-1r-hfO"/>
+                            <constraint firstItem="14V-Rn-hTf" firstAttribute="trailing" secondItem="N9M-Ek-Vcq" secondAttribute="trailingMargin" id="aDu-17-2et"/>
                             <constraint firstItem="Om2-OB-bzi" firstAttribute="centerX" secondItem="14V-Rn-hTf" secondAttribute="centerX" id="cK9-SU-kHc"/>
                             <constraint firstItem="Om2-OB-bzi" firstAttribute="bottom" secondItem="RS6-Cn-nG7" secondAttribute="bottom" id="jr0-Wq-3Bm"/>
-                            <constraint firstItem="Om2-OB-bzi" firstAttribute="centerX" secondItem="E9L-lS-oU2" secondAttribute="centerX" id="snF-1S-bnw"/>
+                            <constraint firstItem="14V-Rn-hTf" firstAttribute="top" secondItem="RS6-Cn-nG7" secondAttribute="top" id="r6p-WZ-StN"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="検索" image="magnifyingglass" catalog="system" id="ei5-Iw-9NG"/>
                     <navigationItem key="navigationItem" id="DVa-cG-ezN">
                         <nil key="title"/>
                     </navigationItem>
@@ -110,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhw-eG-dTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909.60000000000002" y="793.5960591133005"/>
+            <point key="canvasLocation" x="156" y="793.5960591133005"/>
         </scene>
         <!--設定-->
         <scene sceneID="Ase-Yd-3JP">
@@ -142,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlg-n4-jZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="794"/>
+            <point key="canvasLocation" x="1590" y="794"/>
         </scene>
         <!--Update Notice View Controller-->
         <scene sceneID="bgc-Gb-LSB">
@@ -179,30 +184,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPG-kU-fgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="1504"/>
+            <point key="canvasLocation" x="2425" y="1513"/>
         </scene>
-        <!--Document Register View Controller-->
+        <!--登録-->
         <scene sceneID="yeC-da-3IG">
             <objects>
-                <viewController storyboardIdentifier="InputScreen" modalPresentationStyle="fullScreen" id="ObO-BO-qQe" customClass="DocumentRegisterViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" modalPresentationStyle="fullScreen" id="ObO-BO-qQe" customClass="RegisterViewController" customModule="FoodManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LZ7-bn-x9T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="品名を入力して下さい（14文字以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-qo-blK">
-                                <rect key="frame" x="50" y="294" width="275" height="34"/>
+                                <rect key="frame" x="50" y="265" width="275" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="金額を入力して下さい（8桁以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-if-xkM">
-                                <rect key="frame" x="50" y="349" width="275" height="34"/>
+                                <rect key="frame" x="50" y="316" width="275" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sl8-mF-X11">
+                                <rect key="frame" x="104" y="366" width="156" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="支出"/>
+                                    <segment title="収入"/>
+                                </segments>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUF-d4-5RY">
-                                <rect key="frame" x="156" y="423" width="63" height="27"/>
+                                <rect key="frame" x="146" y="415" width="83" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="登録"/>
@@ -214,17 +227,19 @@
                         <viewLayoutGuide key="safeArea" id="2To-T8-A2b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="登録" image="highlighter" catalog="system" id="M4I-Ki-IZp"/>
                     <navigationItem key="navigationItem" id="mca-ct-GoX">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="MmL-ct-yVi"/>
                     </navigationItem>
                     <connections>
                         <outlet property="priceText" destination="7iW-if-xkM" id="dPM-gU-TdX"/>
                         <outlet property="productNameText" destination="0Ms-qo-blK" id="Ebm-LP-owp"/>
+                        <outlet property="segmentedControl" destination="Sl8-mF-X11" id="43F-11-GNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRL-a4-9nU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909.60000000000002" y="1504.4334975369459"/>
+            <point key="canvasLocation" x="-524" y="794"/>
         </scene>
         <!--Scheduled Updated View Controller-->
         <scene sceneID="IfR-Pw-x4y">
@@ -261,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ucl-c2-FiN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="1504"/>
+            <point key="canvasLocation" x="1590" y="1513"/>
         </scene>
         <!--Failure Information View Controller-->
         <scene sceneID="nfo-CB-7yR">
@@ -298,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77p-O6-leZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="794"/>
+            <point key="canvasLocation" x="2425" y="794"/>
         </scene>
         <!--Manual View Controller-->
         <scene sceneID="sih-Ga-sJx">
@@ -335,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKR-Rz-AMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="87"/>
+            <point key="canvasLocation" x="1590" y="54"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="Uh8-zy-dZK">
@@ -372,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJv-Lu-ZNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553" y="86"/>
+            <point key="canvasLocation" x="2425" y="54"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5sM-3v-BVF">
@@ -402,9 +417,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="UrJ-xj-yZQ" kind="relationship" relationship="viewControllers" id="H6O-dv-trH"/>
-                        <segue destination="jZf-sE-UA8" kind="relationship" relationship="viewControllers" id="YUs-jW-NZM"/>
-                        <segue destination="Myk-Xm-Ovs" kind="relationship" relationship="viewControllers" id="iwz-7v-AFJ"/>
-                        <segue destination="2sE-Vs-BOY" kind="relationship" relationship="viewControllers" id="ECg-tC-3Wp"/>
+                        <segue destination="ObO-BO-qQe" kind="relationship" relationship="viewControllers" id="1OA-UR-O1l"/>
+                        <segue destination="WWz-Eg-vAo" kind="relationship" relationship="viewControllers" id="69W-sc-1uX"/>
+                        <segue destination="Myk-Xm-Ovs" kind="relationship" relationship="viewControllers" id="AZF-Ud-kcc"/>
+                        <segue destination="2sE-Vs-BOY" kind="relationship" relationship="viewControllers" id="CSa-Ce-MYb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NV0-9a-aDf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -414,7 +430,7 @@
         <!--グラフ-->
         <scene sceneID="IGl-ex-jW4">
             <objects>
-                <viewController id="Myk-Xm-Ovs" customClass="ChartViewController" customModule="FoodManager" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Graph" id="Myk-Xm-Ovs" customClass="ChartViewController" customModule="FoodManager" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="akQ-gA-Vum">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -456,26 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yd-dX-gW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530.39999999999998" y="793.5960591133005"/>
-        </scene>
-        <!--編集-->
-        <scene sceneID="TjW-9v-XPz">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jZf-sE-UA8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="編集" image="highlighter" catalog="system" id="3Kq-ij-Zae"/>
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y7k-el-RSX">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WWz-Eg-vAo" kind="relationship" relationship="rootViewController" id="nOP-rW-Vxy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R8n-Cn-X9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="156" y="793.5960591133005"/>
+            <point key="canvasLocation" x="858" y="794"/>
         </scene>
     </scenes>
     <resources>
@@ -483,6 +480,7 @@
         <image name="eyes" catalog="system" width="128" height="99"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

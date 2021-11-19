@@ -1,5 +1,5 @@
 //
-//  DocumentTableViewCell.swift
+//  SearchTableViewCell.swift
 //  FoodManager
 //
 //  Created by ESAKI MAKOTO on 2021/10/29.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class DocumentTableViewCell: UITableViewCell {
+class SearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var balanceOfPaymentsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +32,7 @@ class DocumentTableViewCell: UITableViewCell {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         self.priceLabel.text = numberFormatter.string(from: NSNumber(integerLiteral: document.price))! + "円"
+        self.balanceOfPaymentsLabel.text = document.balanceOfPayments
     }
 }
 

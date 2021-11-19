@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import FBSDKCoreKit
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: launchOptions)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
 
